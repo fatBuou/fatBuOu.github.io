@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="-python -量化分析," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="哟，一个大面团" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="这算是一个面试的题吧。需求是把与上证日K趋势的相关性系数大于80%的个股挑选出来。">
+<meta name="keywords" content="-python -量化分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算上证日K与个股的相关性系数">
+<meta property="og:url" content="http://damiantuan.xyz/2017/11/21/计算上证日K与个股的相关性系数/index.html">
+<meta property="og:site_name" content="哟，一个大面团">
+<meta property="og:description" content="这算是一个面试的题吧。需求是把与上证日K趋势的相关性系数大于80%的个股挑选出来。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-21T08:30:10.476Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算上证日K与个股的相关性系数">
+<meta name="twitter:description" content="这算是一个面试的题吧。需求是把与上证日K趋势的相关性系数大于80%的个股挑选出来。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://damiantuan.xyz/2017/11/21/计算上证日K与个股的相关性系数/"/>
+
+
+
+
+
+  <title>计算上证日K与个股的相关性系数 | 哟，一个大面团</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a16f9c19763053979b46d47c92ea123b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">哟，一个大面团</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://damiantuan.xyz/2017/11/21/计算上证日K与个股的相关性系数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="PG-55">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/imag.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="哟，一个大面团">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">计算上证日K与个股的相关性系数</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-21T15:06:05+08:00">
+                2017-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/量化分析/" itemprop="url" rel="index">
+                    <span itemprop="name">量化分析</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,814
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>这算是一个面试的题吧。需求是把与上证日K趋势的相关性系数大于80%的个股挑选出来。<br><a id="more"></a><br>这是一个面试题，当时面试一个做量化交易的公司的一个面试题，不过对方对我这个脚本似乎不太满意，面试的后续就没有后续了。</p>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a><strong>思路</strong></h2><h3 id="数据获取"><a href="#数据获取" class="headerlink" title="数据获取"></a>数据获取</h3><blockquote>
+<p>在上交所正常盘面交易的股票大约有3400多只，如果写爬虫去获取每一只股票的相关信息那么工程量肯定不小，当然加上现在各个金融网站的反爬手段，单单写爬虫这点可能都会卡住，就在网上看看有没有什么免费的API可以使用，无意间找到了tushare这个模块，全中文手册，使用全免费，这个当然是不错的。后面在使用的过程中发现在获取当日交易情况的时候会出现不稳定然后中断获取的情况，这个······毕竟免费的而且没有像各个官方的限制，其实还是很不错的，而且也提供了大量的方法可以使用。</p>
+</blockquote>
+<h3 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h3><blockquote>
+<p>在获取完数据之后应该对数据进行处理，我查看了一下tushare输出的数据类型，基本上都是DataFormat的类型，这点处理上是比较有利的，但是考虑到tushare在获取数据的时候的稳定性情况，我决定不直接使用网络数据，转而使用把数据保存到本地后再使用，在使用完成后我们可以对本地文件进行删除。在这里我不考虑对每一项数据都进行入库处理，因为tushare提供了一个将数据保存的本地的方法，使用起来也十分方便。</p>
+</blockquote>
+<h3 id="提取结果"><a href="#提取结果" class="headerlink" title="提取结果"></a>提取结果</h3><blockquote>
+<p>每只股票的代码是6位数，相关性系数检验在80%以上的应该不会很多，所以我采用直接将股票代码保存在一个txt文本文件中。</p>
+</blockquote>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a><strong>方法</strong></h2><h3 id="获取有效股票代码"><a href="#获取有效股票代码" class="headerlink" title="获取有效股票代码"></a>获取有效股票代码</h3><blockquote>
+<p>选择使用tushre之后，知道了如何获取个股的数据和上证指数，但是模块中没有提供我想要的单单的股票代码，我也不能用循环去生成股票代码，虽然说股票的代码确实是有顺序的，但是不敢保证生成的股票代码的那只股票现在是否还在市。想想，如果可以获取当日的交易的所有股票行情的话这个问题不就解决了，因为当日还在交易的所有股票肯定还没有退市的。查一下手册，发现有一个函数是一次性获取当前交易所有股票的行情数据，ok就是他了。获取到了之后保存为本地excel表格，再从表格中读取股票代码。</p>
+</blockquote>
+<h3 id="计算K线趋势"><a href="#计算K线趋势" class="headerlink" title="计算K线趋势"></a>计算K线趋势</h3><blockquote>
+<p>后面发现使用tushare获取的数据并没有计算出当日的K线的走势，不过没关系了，他给出的数据中有一天的开盘价，收盘价，最高价和最低价，这些足够计算当日的K线了。正值为红，负值为绿。在计算的过程中发现读出来的数据是一个列表，其中包括表头的值，于是取下标从1开始。列表的计算在python并不是很方便，因为python并没有像c一样提供一个数组的数据结构，幸好前几天刚刚学习了numpy模块，现学现卖了，把读取出来的列表通过numpy模块转换成数组，再使用numpy模块内置算法计算，这样大大的减少了工作量。</p>
+</blockquote>
+<h3 id="相关性系数"><a href="#相关性系数" class="headerlink" title="相关性系数"></a>相关性系数</h3><blockquote>
+<p>Pearson系数也称为是简单相关性系数，但是计算中要求两个计算的量近似服从二维的正态分布，而上证K线的趋势和个股K线的趋势其实并没有什么规律，不能使用这个，于是采用Spearman系数，Spearman系数在计算的过程中并不要求计算的两组数字的分布规律。</p>
+</blockquote>
+<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><blockquote>
+<p>工作流程就是获取上证指数的信息，保存为表格，读表，计算K线，获取当日交易情况，保存为表格，读表，处理，得出个股编号，再通过编号去获取该股票的历史数据，保存为表格，读表，计算K线，再把个股的K线与上证的K线从获取之日开始计算，得出Spearman系数，最后把大于Spearman系数大于80%的个股编号保存下来，不满足条件的直接忽略。最后计算完该股票后把保存该股票信息的excel表格删掉，减少占用磁盘空间。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># *-*coding='UTF-8'*-*</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> tushare <span class="keyword">as</span> ts</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> xlrd</div><div class="line"><span class="keyword">import</span> pandas</div><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">import</span> os</div><div class="line"></div><div class="line"><span class="comment"># 获取上证指数的K线</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getshangzheng_K</span><span class="params">()</span>:</span></div><div class="line">    <span class="comment">#读取上证指数的日K</span></div><div class="line">    shangzheng = ts.get_hist_data(<span class="string">'sh'</span>,ktype=<span class="string">'D'</span>,start=<span class="string">'2017-07-01'</span>)</div><div class="line">    <span class="comment"># 将上证指数的日K存入excel表格</span></div><div class="line">    shangzheng.to_excel(<span class="string">'sh.xlsx'</span>,sheet_name=<span class="string">'Sheet1'</span>)</div><div class="line">    (filepath,tempfilename)=os.path.split(<span class="string">'sh.xlsx'</span>)</div><div class="line">    <span class="keyword">return</span> tempfilename</div><div class="line"></div><div class="line"><span class="comment"># 读取excel表格</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_excel</span><span class="params">(fileName=<span class="string">''</span>,sheet=<span class="string">'Sheet1'</span>)</span>:</span></div><div class="line">    workbook=xlrd.open_workbook(fileName)</div><div class="line">    sheet1=workbook.sheet_by_name(sheet)</div><div class="line">    <span class="keyword">return</span> sheet1</div><div class="line"></div><div class="line"><span class="comment"># 计算K线的趋势</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">K</span><span class="params">(sheet,open_col_values=False,close_col_values=False)</span>:</span></div><div class="line">    open_price=sheet.col_values(open_col_values)</div><div class="line">    close_price=sheet.col_values(close_col_values)</div><div class="line">    open_price_array=np.array(open_price[<span class="number">1</span>:],dtype=float)</div><div class="line">    close_price_array=np.array(close_price[<span class="number">1</span>:],dtype=float)</div><div class="line">    movements=close_price_array-open_price_array</div><div class="line">    the_k=pandas.Series(movements)</div><div class="line">    <span class="keyword">return</span> the_k</div><div class="line"></div><div class="line"><span class="comment"># 获取上证交易所中当日正在交易的所有股票信息</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_today_stock</span><span class="params">()</span>:</span></div><div class="line">    todayall=ts.get_today_all()</div><div class="line">    todayall.to_excel(<span class="string">'todays.xlsx'</span>)</div><div class="line">    (filepath,tempfilename)=os.path.split(<span class="string">'todays.xlsx'</span>)</div><div class="line">    <span class="keyword">return</span> tempfilename</div><div class="line"></div><div class="line"><span class="comment"># 获取上证中正在交易的股票的代码</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_stock_num</span><span class="params">(sheet=<span class="string">''</span>)</span>:</span></div><div class="line">    todaycols=sheet.col_values(<span class="number">1</span>)</div><div class="line">    <span class="keyword">return</span> todaycols</div><div class="line"></div><div class="line"><span class="comment"># 获取个股的详细信息</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_stock_info</span><span class="params">(stock_num)</span>:</span></div><div class="line">    stock_number=str(stock_num)</div><div class="line">    stock_info=ts.get_hist_data(stock_number,start=<span class="string">'2017-07-01'</span>,ktype=<span class="string">'D'</span>)</div><div class="line">    stock_info.to_excel(stock_number+<span class="string">'.xlsx'</span>)</div><div class="line">    (filepath,tempfilename)=os.path.split(stock_number+<span class="string">'.xlsx'</span>)</div><div class="line">    <span class="keyword">return</span> tempfilename</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 计算相关性系数，因为数据分布无规则，所以计算spearman相关系数</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_spearman</span><span class="params">(sh,stock)</span>:</span></div><div class="line">    corr_spearman=sh.corr(stock,method=<span class="string">'spearman'</span>)</div><div class="line">    <span class="keyword">return</span> corr_spearman</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</div><div class="line">    <span class="comment">#获取上证信息并保存为表格 </span></div><div class="line">    sh_excel=getshangzheng_K()</div><div class="line">    <span class="comment">#读取上证信息表格 </span></div><div class="line">    sh_sheet=read_excel(sh_excel,sheet=<span class="string">'Sheet1'</span>)</div><div class="line">    <span class="comment"># 计算上证日K的趋势</span></div><div class="line">    sh_K=K(sh_sheet,open_col_values=<span class="number">1</span>,close_col_values=<span class="number">3</span>)</div><div class="line">    </div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment"># 计算个股的日K趋势</span></div><div class="line">    today_stock_exccel=get_today_stock()</div><div class="line">    <span class="comment">#实际使用中，read_excel函数的第一个参数可以直接写成文件名，这样不必每次执行都重复去获取数据 </span></div><div class="line">    today_sheet=read_excel(today_stock_exccel,sheet=<span class="string">'Sheet1'</span>)</div><div class="line">    stock_nums=get_stock_num(today_sheet)</div><div class="line">    <span class="keyword">for</span> stock_num <span class="keyword">in</span> stock_nums[<span class="number">1</span>:]:</div><div class="line">        </div><div class="line">        stock_excel=get_stock_info(stock_num)</div><div class="line">        stock_sheet=read_excel(fileName=stock_excel,sheet=<span class="string">'Sheet1'</span>)</div><div class="line">        stock_K=K(sheet=stock_sheet,open_col_values=<span class="number">1</span>,close_col_values=<span class="number">3</span>)</div><div class="line">        <span class="comment">#以上为计算个股的K线趋势 </span></div><div class="line"></div><div class="line">        <span class="comment">#此处计算Spearman系数 </span></div><div class="line">        spearman=find_spearman(sh_K,stock_K)</div><div class="line">        <span class="keyword">if</span> spearman&gt;<span class="number">0.800</span>:</div><div class="line">            <span class="keyword">with</span> open(<span class="string">'save.txt'</span>,<span class="string">'a+'</span>) <span class="keyword">as</span> fp:</div><div class="line">                fp.write(str(stock_num).encode(<span class="string">'utf8'</span>) + <span class="string">'\t'</span>)</div><div class="line">                <span class="keyword">print</span> <span class="string">'done one'</span>,time.strftime(<span class="string">"%Y-%m-%d %X"</span>, time.localtime())</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">print</span> <span class="string">'let one go'</span>,time.strftime(<span class="string">"%Y-%m-%d %X"</span>, time.localtime())</div><div class="line">        <span class="comment">#这句为删除使用过的表格，如果想保留相关表格，可以将其注释掉 </span></div><div class="line">        os.remove(str(stock_num)+<span class="string">'.xlsx'</span>)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>在实际使用的过程中我们可以将上证的表格和当日成交的表格给保留下来，并在代码中注释掉相应的执行语句，将文件名直接填成参数，这样可以避免获取数据的时候tushare的不稳定造成的影响。</p>
+<p>最后，计算的结果为300719    300716    002781    000555    </p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+
+    
+
+    
+      <div>
+        <div align="center">
+ 
+   <div class="">
+   <p><span>
+   <b>本文地址：</b><a href="/2017/11/21/计算上证日K与个股的相关性系数/" title="计算上证日K与个股的相关性系数">http://damiantuan.xyz/2017/11/21/计算上证日K与个股的相关性系数/</a><br/><b>转载请注明出处，谢谢！</b>
+   </span></p>
+   </div>
+ 
+</div>
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/path/to/wechat-reward-image" alt="PG-55 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/path/to/alipay-reward-image" alt="PG-55 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+  <div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+  </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python-量化分析/" rel="tag"><i class="fa fa-tag"></i> -python -量化分析</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/19/scrapy爬取当当网所有3c产品商品名称，价格，评论数/" rel="next" title="scrapy爬取当当网所有3c产品商品名称，价格，评论数">
+                <i class="fa fa-chevron-left"></i> scrapy爬取当当网所有3c产品商品名称，价格，评论数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/03/网页状态码及其处理/" rel="prev" title="网页状态码及其处理">
+                网页状态码及其处理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/imag.png"
+                alt="PG-55" />
+            
+              <p class="site-author-name" itemprop="name">PG-55</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="jui368@163.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/2150856453/profile?topnav=1&wvr=6" target="_blank" title="weibo">
+                    
+                      <i class="fa fa-fw fa-weibo"></i>weibo</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://damiantuan.xyz" title="大面团" target="_blank">大面团</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.0101tx.com/" title="亿界博客" target="_blank">亿界博客</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=31445772&auto=1&height=66"></iframe>
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">1.</span> <span class="nav-text">思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据获取"><span class="nav-number">1.1.</span> <span class="nav-text">数据获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据处理"><span class="nav-number">1.2.</span> <span class="nav-text">数据处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提取结果"><span class="nav-number">1.3.</span> <span class="nav-text">提取结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">2.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取有效股票代码"><span class="nav-number">2.1.</span> <span class="nav-text">获取有效股票代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算K线趋势"><span class="nav-number">2.2.</span> <span class="nav-text">计算K线趋势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关性系数"><span class="nav-number">2.3.</span> <span class="nav-text">相关性系数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工作流程"><span class="nav-number">3.</span> <span class="nav-text">工作流程</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">PG-55</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">13.3k</span>
+  
+</div>
+<span id="busuanzi_container_site_uv">
+  本站总访问量<span id="busuanzi_value_site_uv"></span>次
+</span>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="http://damiantuan.xyz">Paang Lam</a> 个人专属</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">博客主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+<div class="theme-info">
+  <div class="powered-by">
+  
+
+
+        
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=63850979";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 背景动画 -->
+  <script type="text/javascript" src="/js/src/particle.js"></script>
+
+</body>
+</html>
