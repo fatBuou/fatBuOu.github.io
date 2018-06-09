@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python,爬虫," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="哟，一个大面团" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="有一段时间没有更新博客了，其中原因很多，先是接下了一个公司的工作，当时项目很急，也经常加班，也造成了没有时间去更新博客，后面因为工作中的一些理念不同，我也离开了那个公司到别的地方去工作了，换了新工作很多东西需要去学习和熟悉，换了工作也换了住的地方，这也花费了很多的时间去处理。本来这篇文章在过年的时候就想写的了，结果一晃都半年过去了，现在才动笔。  首先还是老规矩，做爬虫，先分析网络请求。其中的目标">
+<meta name="keywords" content="python,爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="爬取深圳证券交易所专题统计">
+<meta property="og:url" content="http://damiantuan.xyz/2018/06/09/爬取深圳证券交易所专题统计/index.html">
+<meta property="og:site_name" content="哟，一个大面团">
+<meta property="og:description" content="有一段时间没有更新博客了，其中原因很多，先是接下了一个公司的工作，当时项目很急，也经常加班，也造成了没有时间去更新博客，后面因为工作中的一些理念不同，我也离开了那个公司到别的地方去工作了，换了新工作很多东西需要去学习和熟悉，换了工作也换了住的地方，这也花费了很多的时间去处理。本来这篇文章在过年的时候就想写的了，结果一晃都半年过去了，现在才动笔。  首先还是老规矩，做爬虫，先分析网络请求。其中的目标">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://s1.ax1x.com/2018/06/09/CbqQUO.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/06/09/Cbqwa8.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/06/09/CbqDPg.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/06/09/CbqrGQ.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/06/09/CbqTz9.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/06/09/CbOpkT.md.png">
+<meta property="og:image" content="https://s1.ax1x.com/2018/06/09/CbjSWF.md.png">
+<meta property="og:updated_time" content="2018-06-09T10:30:22.026Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="爬取深圳证券交易所专题统计">
+<meta name="twitter:description" content="有一段时间没有更新博客了，其中原因很多，先是接下了一个公司的工作，当时项目很急，也经常加班，也造成了没有时间去更新博客，后面因为工作中的一些理念不同，我也离开了那个公司到别的地方去工作了，换了新工作很多东西需要去学习和熟悉，换了工作也换了住的地方，这也花费了很多的时间去处理。本来这篇文章在过年的时候就想写的了，结果一晃都半年过去了，现在才动笔。  首先还是老规矩，做爬虫，先分析网络请求。其中的目标">
+<meta name="twitter:image" content="https://s1.ax1x.com/2018/06/09/CbqQUO.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://damiantuan.xyz/2018/06/09/爬取深圳证券交易所专题统计/"/>
+
+
+
+
+
+  <title>爬取深圳证券交易所专题统计 | 哟，一个大面团</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a16f9c19763053979b46d47c92ea123b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">哟，一个大面团</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://damiantuan.xyz/2018/06/09/爬取深圳证券交易所专题统计/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="PG-55">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/imag.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="哟，一个大面团">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">爬取深圳证券交易所专题统计</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T05:30:39+08:00">
+                2018-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python爬虫/" itemprop="url" rel="index">
+                    <span itemprop="name">python爬虫</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,455
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  10
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>有一段时间没有更新博客了，其中原因很多，先是接下了一个公司的工作，当时项目很急，也经常加班，也造成了没有时间去更新博客，后面因为工作中的一些理念不同，我也离开了那个公司到别的地方去工作了，换了新工作很多东西需要去学习和熟悉，换了工作也换了住的地方，这也花费了很多的时间去处理。本来这篇文章在过年的时候就想写的了，结果一晃都半年过去了，现在才动笔。</p>
+<blockquote>
+<p>首先还是老规矩，做爬虫，先分析网络请求。其中的目标URL是<a href="http://www.szse.cn/main/marketdata/zttj_front/" target="_blank" rel="external">深圳交易所专题统计</a>，我们要爬取的就是其中的主要财务指标，如图所示.<br><img src="https://s1.ax1x.com/2018/06/09/CbqQUO.png" alt="CbqQUO.png"></p>
+<p>这样看到这些报告的链接，很多都直接是指向文件的链接，这意味着我们如果直接访问这些链接就相当于是直接访问文件了，如果要保存到本地的话我们只需要用二进制讲访问返回的内容写到本地即可。多翻几页能看出来，文件都是doc，docx，pdf，xlsx，还有shtml之类的组成的，这些不影响，还是采取使用二进制写进到本地进行存储，得到文件之后再进行处理。<br><img src="https://s1.ax1x.com/2018/06/09/Cbqwa8.png" alt="Cbqwa8.png"></p>
+<p>我们再往下看，发现一共有10页，我们尝试点击翻页，看看浏览器上面的链接有没有上面变化。结果我们发现，并没有在url中暴露翻页的信息。<br><img src="https://s1.ax1x.com/2018/06/09/CbqDPg.png" alt="CbqDPg.png"></p>
+<p>如此这般，那么只只好抓包分析了，上F12，然后点解下一页分析一下请求的情况。<br><img src="https://s1.ax1x.com/2018/06/09/CbqrGQ.png" alt="CbqrGQ.png"></p>
+<p>这样看来就很明显了，请求不是很多，不得不说金融行业真是话不多，但是说话都命中要害，减少了很多不必要的开销。看图我们发现是一个post请求，让后返回了一个HTML页面，我们可以看到返回的HTML中有第二页所出现的报告的名字和相应的链接，那么我们也不用去分析别的链接了，就是这个链接了，下面进行分析。</p>
+<p><img src="https://s1.ax1x.com/2018/06/09/CbqTz9.png" alt="CbqTz9.png"></p>
+<p>我们可以看到，翻页的时候触发了一个js，再加上一个随机的浮点型数字，我当时翻了一下网页中的代码，奈何金融行业比较社会，人狠话不多，基本没看懂这个随机数是怎么来的，并且每次点击翻页的随机数都不一样，从这个地方看，我基本就放弃使用requests或是urllib来进行访问了。不过爬虫与反爬就是这样子，你有张良计，我有过墙梯，直接使用python发包不行的话就只能借助别的工具来进行访问了。</p>
+<p>介绍一个小工具，<a href="http://phantomjs.org/" target="_blank" rel="external">phantomjs</a>，网上有很多这个工具的教程，重复phantomjs入门使用就不在这里赘述了，关于这个工具，大家可以理解成一个没有界面的浏览器即可。这个小工具下载好了直接双击，然后就会自动在系统里面了，使用的时候只需要将phantomJS和脚本放在一起就行了。</p>
+<p>首先，我们先来实例化一个phantomJS无头浏览器。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">driver = webdriver.PhantomJS()</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p><a href="https://imgchr.com/i/CbOpkT" target="_blank" rel="external"><img src="https://s1.ax1x.com/2018/06/09/CbOpkT.md.png" alt="CbOpkT.md.png"></a></p>
+<blockquote>
+<p>因为我们第一次打开目标URL的时候其实时用的get请求，于是我们也可以尝试使用phantomJS来进行get请求。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">driver.get(<span class="string">"http://www.szse.cn/main/marketdata/zttj_front/"</span>)    <span class="comment">#coding='ISO-8859-1'</span></div><div class="line">html = driver.page_source</div></pre></td></tr></table></figure></p>
+<p>我们发现，在这段代码中可以获取正确的HTML，于是我们再尝试定位到下一页的按钮，尝试是否可以正常点击下一页。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">driver.find_element_by_xpath(<span class="string">'//*[@id="Table1"]/tbody/tr/td[3]/input[2]'</span>).click()</div></pre></td></tr></table></figure></p>
+<p>运行之后发现，在phantomJS的click()执行之后，确实是可以获取第二页的HTML，那么翻页暂时来说不是问题了，下面的问题就是怎么把每一页的链接获取到，然后下载文件到本地。我们在网页上点击文件的链接，发现可以直接打开一些文件，这时我们就可以在获取文件链接之后使用python进行请求发包了。来看看下面这段代码。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 获取文件链接，此处doc包括但不限于doc文件，还报考页面中所有的链接，</span></div><div class="line"><span class="comment"># 当然，更正确的叫法应该get_url，但是当时只想到了链接直接指向文档，就get_文档了</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_doc</span><span class="params">(html)</span>:</span></div><div class="line">    source = html</div><div class="line">    bsContent = BeautifulSoup(source, <span class="string">'html.parser'</span>)</div><div class="line">    urlContent = bsContent.find_all(class_=<span class="string">'tdline2'</span>)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> urlContent:</div><div class="line">        a = i.find(<span class="string">"a"</span>)</div><div class="line">        url = a.get(<span class="string">'href'</span>)</div><div class="line">        download_url = domain_url + url</div><div class="line">        download(download_url)</div><div class="line"></div><div class="line"><span class="comment"># 下载文件</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">download</span><span class="params">(download_url)</span>:</span></div><div class="line">    <span class="comment"># 记录下载过的文档的链接</span></div><div class="line">    <span class="keyword">with</span> open(file=<span class="string">'url_log.txt'</span>,mode=<span class="string">'r+'</span>) <span class="keyword">as</span> fp:</div><div class="line">        log=fp.read()</div><div class="line">        <span class="keyword">if</span> download_url <span class="keyword">not</span> <span class="keyword">in</span> log:</div><div class="line">            r = requests.get(url=download_url)</div><div class="line">            <span class="keyword">with</span> open(file=download_url[download_url.rfind(<span class="string">'/'</span>) + <span class="number">1</span>:], mode=<span class="string">"wb"</span>) <span class="keyword">as</span> code:</div><div class="line">                code.write(r.content)</div><div class="line">            fp.write(download_url + <span class="string">"\n"</span>)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">pass</span></div></pre></td></tr></table></figure></p>
+<p>这样的话文件是下载下来的，但是也仅仅是下载下来了，里面的信息没有办法提取出来，关于这几种文件在python中怎么解析，相关的模块的文档也有，这里也不去介绍入门了。这里有一点需要注意的是，因为doc的兼容性问题，我们可以将其转换成docx再来进行读取，这个地方需要电脑安装了MS office或是wps，因为是调用这两个应用程序的组件进行转换的，此处需要声明一下。多的不说的，代码的注释还是比较详细的，我直接讲代码放出。</p>
+<p>整个脚本的代码如下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*-coding:'utf-8' -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> win32com</div><div class="line"><span class="keyword">from</span> win32com.client <span class="keyword">import</span> Dispatch</div><div class="line"><span class="keyword">from</span> win32com <span class="keyword">import</span> client</div><div class="line"><span class="keyword">from</span> docx <span class="keyword">import</span> Document</div><div class="line"><span class="keyword">import</span> xlrd</div><div class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</div><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">from</span> pdfminer.pdfparser <span class="keyword">import</span> PDFParser,PDFDocument</div><div class="line"><span class="keyword">from</span> pdfminer.pdfinterp <span class="keyword">import</span> PDFResourceManager, PDFPageInterpreter</div><div class="line"><span class="keyword">from</span> pdfminer.converter <span class="keyword">import</span> PDFPageAggregator</div><div class="line"><span class="keyword">from</span> pdfminer.layout <span class="keyword">import</span> LTTextBoxHorizontal,LAParams</div><div class="line"><span class="keyword">from</span> pdfminer.pdfinterp <span class="keyword">import</span> PDFTextExtractionNotAllowed</div><div class="line"></div><div class="line">domain_url = <span class="string">'http://www.szse.cn'</span></div><div class="line"></div><div class="line"><span class="comment"># 分析网页，下载文件</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_html</span><span class="params">()</span>:</span></div><div class="line"></div><div class="line">    driver = webdriver.PhantomJS()</div><div class="line">    driver.get(<span class="string">"http://www.szse.cn/main/marketdata/zttj_front/"</span>)  <span class="comment"># coding='ISO-8859-1'</span></div><div class="line">    html = driver.page_source</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span>  range(<span class="number">0</span>,<span class="number">10</span>):</div><div class="line">        <span class="keyword">if</span> i ==<span class="number">0</span>:</div><div class="line">            get_doc(html=html)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">try</span>:</div><div class="line">                driver.find_element_by_xpath(<span class="string">'//*[@id="Table1"]/tbody/tr/td[3]/input[2]'</span>).click()</div><div class="line">                time.sleep(<span class="number">3</span>)</div><div class="line">                get_doc(driver.page_source)</div><div class="line">            <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</div><div class="line">                <span class="keyword">break</span></div><div class="line"></div><div class="line"><span class="comment"># 获取文件链接，此处doc包括但不限于doc文件，还报考页面中所有的链接，</span></div><div class="line"><span class="comment"># 当然，更正确的叫法应该get_url，但是当时只想到了链接直接指向文档，就get_文档了</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_doc</span><span class="params">(html)</span>:</span></div><div class="line">    source = html</div><div class="line">    bsContent = BeautifulSoup(source, <span class="string">'html.parser'</span>)</div><div class="line">    urlContent = bsContent.find_all(class_=<span class="string">'tdline2'</span>)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> urlContent:</div><div class="line">        a = i.find(<span class="string">"a"</span>)</div><div class="line">        url = a.get(<span class="string">'href'</span>)</div><div class="line">        download_url = domain_url + url</div><div class="line">        download(download_url)</div><div class="line"></div><div class="line"><span class="comment"># 下载文件</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">download</span><span class="params">(download_url)</span>:</span></div><div class="line">    <span class="keyword">with</span> open(file=<span class="string">'url_log.txt'</span>,mode=<span class="string">'r+'</span>) <span class="keyword">as</span> fp:</div><div class="line">        log=fp.read()</div><div class="line">        <span class="keyword">if</span> download_url <span class="keyword">not</span> <span class="keyword">in</span> log:</div><div class="line">            r = requests.get(url=download_url)</div><div class="line">            <span class="keyword">with</span> open(file=download_url[download_url.rfind(<span class="string">'/'</span>) + <span class="number">1</span>:], mode=<span class="string">"wb"</span>) <span class="keyword">as</span> code:</div><div class="line">                code.write(r.content)</div><div class="line">            fp.write(download_url + <span class="string">"\n"</span>)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">pass</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">translate_doc</span><span class="params">(f)</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">    将doc文件转换为docx</span></div><div class="line"><span class="string">    """</span></div><div class="line">    word = client.Dispatch(<span class="string">'kwps.Application'</span>)    <span class="comment">#如果电脑安装是MS office，应该使用word.Application</span></div><div class="line">    word.Visible = <span class="number">0</span></div><div class="line">    doc = word.Documents.Open(f)        <span class="comment"># 目标路径下的文件</span></div><div class="line">    doc.SaveAs2(f[<span class="number">0</span>:<span class="number">-3</span>]+<span class="string">'docx'</span>,<span class="number">12</span>)  <span class="comment"># 转化后路径下的文件</span></div><div class="line">    doc.Close()</div><div class="line">    word.Quit()</div><div class="line">    parse_docx(f[<span class="number">0</span>:<span class="number">-3</span>]+<span class="string">'docx'</span>)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_docx</span><span class="params">(f)</span>:</span></div><div class="line"></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">    读取docx中的表格</span></div><div class="line"><span class="string">    """</span></div><div class="line">    d = Document(f)</div><div class="line">    t = d.tables[<span class="number">0</span>]</div><div class="line">    rows=len(t._cells)</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="keyword">for</span> row <span class="keyword">in</span> range (<span class="number">1</span>,(rows//t._column_count)+<span class="number">1</span>):</div><div class="line">            stock_number = t.cell(row,<span class="number">0</span>).text</div><div class="line">            stock_name = t.cell(row,<span class="number">1</span>).text</div><div class="line">            profits = t.cell(row,<span class="number">2</span>).text</div><div class="line">            per_earn = t.cell(row,<span class="number">3</span>).text</div><div class="line">            per_profits=t.cell(row,<span class="number">4</span>).text</div><div class="line">            per_cash=t.cell(row,<span class="number">5</span>).text</div><div class="line">            <span class="keyword">if</span> t.cell(row,<span class="number">6</span>).text==<span class="string">''</span>:</div><div class="line">                r_plant =<span class="string">'无预案'</span></div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                r_plant=t.cell(row,<span class="number">6</span>).text</div><div class="line">            print(stock_number, stock_name, profits, per_earn, per_profits, per_cash, r_plant)</div><div class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</div><div class="line">        print(e)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_docx2</span><span class="params">(f)</span>:</span></div><div class="line">    <span class="string">'''</span></div><div class="line"><span class="string">    此函数作用是读取纯文本docx文件</span></div><div class="line"><span class="string">    :param f:文件参数</span></div><div class="line"><span class="string">    :return:</span></div><div class="line"><span class="string">    '''</span></div><div class="line">    document = Document(f)</div><div class="line">    <span class="keyword">for</span> paragraph <span class="keyword">in</span> document.paragraphs:</div><div class="line">        print(paragraph.text)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_pdf</span><span class="params">(f)</span>:</span></div><div class="line">    fp = open(f, <span class="string">'rb'</span>) <span class="comment"># 以二进制读模式打开</span></div><div class="line">    <span class="comment">#用文件对象来创建一个pdf文档分析器</span></div><div class="line">    praser = PDFParser(fp)</div><div class="line">    <span class="comment"># 创建一个PDF文档</span></div><div class="line">    doc = PDFDocument()</div><div class="line">    <span class="comment"># 连接分析器 与文档对象</span></div><div class="line">    praser.set_document(doc)</div><div class="line">    doc.set_parser(praser)</div><div class="line"></div><div class="line">    <span class="comment"># 提供初始化密码</span></div><div class="line">    <span class="comment"># 如果没有密码 就创建一个空的字符串</span></div><div class="line">    doc.initialize()</div><div class="line"></div><div class="line">    <span class="comment"># 检测文档是否提供txt转换，不提供就忽略</span></div><div class="line">    <span class="keyword">if</span> <span class="keyword">not</span> doc.is_extractable:</div><div class="line">        <span class="keyword">raise</span> PDFTextExtractionNotAllowed</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="comment"># 创建PDf 资源管理器 来管理共享资源</span></div><div class="line">        rsrcmgr = PDFResourceManager()</div><div class="line">        <span class="comment"># 创建一个PDF设备对象</span></div><div class="line">        laparams = LAParams()</div><div class="line">        device = PDFPageAggregator(rsrcmgr, laparams=laparams)</div><div class="line">        <span class="comment"># 创建一个PDF解释器对象</span></div><div class="line">        interpreter = PDFPageInterpreter(rsrcmgr, device)</div><div class="line"></div><div class="line">        <span class="comment"># 循环遍历列表，每次处理一个page的内容</span></div><div class="line">        <span class="keyword">for</span> page <span class="keyword">in</span> doc.get_pages(): <span class="comment"># doc.get_pages() 获取page列表</span></div><div class="line">            interpreter.process_page(page)</div><div class="line">            <span class="comment"># 接受该页面的LTPage对象</span></div><div class="line">            layout = device.get_result()</div><div class="line">            <span class="comment"># 这里layout是一个LTPage对象 里面存放着 这个page解析出的各种对象 一般包括LTTextBox, LTFigure, LTImage, LTTextBoxHorizontal 等等 想要获取文本就获得对象的text属性，</span></div><div class="line">            <span class="keyword">for</span> x <span class="keyword">in</span> layout:</div><div class="line">                <span class="keyword">if</span> (isinstance(x, LTTextBoxHorizontal)):</div><div class="line">                    <span class="keyword">with</span> open(str(f)[:<span class="number">-3</span>]+<span class="string">'txt'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</div><div class="line">                        results = x.get_text()</div><div class="line">                        print(results)</div><div class="line">                        f.write(results + <span class="string">'\n'</span>)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_excel</span><span class="params">(f)</span>:</span></div><div class="line">    workbook=xlrd.open_workbook(f)</div><div class="line">    <span class="keyword">for</span> sheet_name <span class="keyword">in</span> workbook.sheet_names():</div><div class="line">        sheet=workbook.sheet_by_name(sheet_name)</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, sheet.nrows):</div><div class="line">            name = sheet.row(i)[<span class="number">1</span>].value</div><div class="line">            deal_money = str(sheet.row(i)[<span class="number">2</span>].value)</div><div class="line">            print(name, deal_money)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_shtml</span><span class="params">(f)</span>:</span></div><div class="line">    <span class="keyword">with</span> open(f, <span class="string">'r'</span>) <span class="keyword">as</span> fp:</div><div class="line">        shtml = fp.read()</div><div class="line">        p = BeautifulSoup(shtml, <span class="string">'html.parser'</span>)</div><div class="line">        biaozhi = p.find_all(class_=<span class="string">'MsoNormal'</span>)</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> biaozhi:</div><div class="line">            print(i.get_text(), )</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">()</span>:</span></div><div class="line">    <span class="comment"># 遍历文件</span></div><div class="line">    PATH = <span class="string">r'D:\huarun\BankSpider_self\szse_spider'</span>  <span class="comment"># windows文件路径</span></div><div class="line">    files = os.listdir(PATH)</div><div class="line">    <span class="keyword">for</span> doc <span class="keyword">in</span> files:</div><div class="line">        <span class="keyword">if</span> os.path.splitext(doc)[<span class="number">1</span>] == <span class="string">'.docx'</span>:</div><div class="line">            <span class="keyword">try</span>:</div><div class="line">                parse_docx(PATH + <span class="string">'\\'</span> + doc)</div><div class="line">            <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</div><div class="line">                parse_docx2(PATH + <span class="string">'\\'</span> + doc)</div><div class="line">        <span class="keyword">elif</span> os.path.splitext(doc)[<span class="number">1</span>] == <span class="string">'.doc'</span> <span class="keyword">or</span> os.path.splitext(doc)[<span class="number">1</span>]==<span class="string">'.DOC'</span>:</div><div class="line">            <span class="keyword">try</span>:</div><div class="line">                translate_doc(PATH + <span class="string">'\\'</span> + doc)</div><div class="line">            <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</div><div class="line">                print(e)</div><div class="line">        <span class="keyword">elif</span> os.path.splitext(doc)[<span class="number">1</span>]==<span class="string">'.pdf'</span>:</div><div class="line">            <span class="keyword">try</span>:</div><div class="line">                parse_pdf(PATH+<span class="string">'\\'</span>+doc)</div><div class="line">            <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</div><div class="line">                print(e)</div><div class="line">        <span class="keyword">elif</span> os.path.splitext(doc)[<span class="number">1</span>]==<span class="string">'.xls'</span>:</div><div class="line">            <span class="keyword">try</span>:</div><div class="line">                parse_excel(PATH+<span class="string">'\\'</span>+doc)</div><div class="line">            <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</div><div class="line">                print(e)</div><div class="line">        <span class="keyword">elif</span> os.path.splitext(doc)[<span class="number">1</span>]==<span class="string">'.shtml'</span>:</div><div class="line">            <span class="keyword">try</span>:</div><div class="line">                parse_shtml(PATH+<span class="string">'\\'</span>+doc)</div><div class="line">            <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</div><div class="line">                print(e)</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    parse_html()</div><div class="line">    <span class="comment"># run()</span></div></pre></td></tr></table></figure></p>
+<p>最后实现的效果是可以进行增量爬取，因为已经爬取过的都会被记录下来，然后在获取到相同链接的时候忽略掉该链接的下载和解析，并且将文件都解析成字符串，如何分析，此处便是后话了。下图是当时爬取的一些记录。</p>
+</blockquote>
+<p><a href="https://imgchr.com/i/CbjSWF" target="_blank" rel="external"><img src="https://s1.ax1x.com/2018/06/09/CbjSWF.md.png" alt="CbjSWF.md.png"></a></p>
+
+      
+    </div>
+    
+    
+    
+
+
+    
+
+    
+      <div>
+        <div align="center">
+ 
+   <div class="">
+   <p><span>
+   <b>本文地址：</b><a href="/2018/06/09/爬取深圳证券交易所专题统计/" title="爬取深圳证券交易所专题统计">http://damiantuan.xyz/2018/06/09/爬取深圳证券交易所专题统计/</a><br/><b>转载请注明出处，谢谢！</b>
+   </span></p>
+   </div>
+ 
+</div>
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/path/to/wechat-reward-image" alt="PG-55 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/path/to/alipay-reward-image" alt="PG-55 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+  <div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+  </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python-爬虫/" rel="tag"><i class="fa fa-tag"></i> python,爬虫</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/05/用python检测窗体状态/" rel="next" title="用python检测窗体状态">
+                <i class="fa fa-chevron-left"></i> 用python检测窗体状态
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/imag.png"
+                alt="PG-55" />
+            
+              <p class="site-author-name" itemprop="name">PG-55</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="jui368@163.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/2150856453/profile?topnav=1&wvr=6" target="_blank" title="weibo">
+                    
+                      <i class="fa fa-fw fa-weibo"></i>weibo</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://damiantuan.xyz" title="大面团" target="_blank">大面团</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.0101tx.com/" title="亿界博客" target="_blank">亿界博客</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=31445772&auto=1&height=66"></iframe>
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">PG-55</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">21.3k</span>
+  
+</div>
+<span id="busuanzi_container_site_uv">
+  本站总访问量<span id="busuanzi_value_site_uv"></span>次
+</span>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="http://damiantuan.xyz">Paang Lam</a> 个人专属</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">博客主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+<div class="theme-info">
+  <div class="powered-by">
+  
+
+
+        
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=63850979";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 背景动画 -->
+  <script type="text/javascript" src="/js/src/particle.js"></script>
+
+</body>
+</html>
