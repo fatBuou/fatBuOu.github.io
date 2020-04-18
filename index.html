@@ -5,14 +5,36 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -50,19 +72,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
 
 
 
@@ -98,9 +120,9 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -126,12 +148,22 @@
 
 
 
-  <title>哟，一个大面团</title>
+  <title>归档 | 哟，一个大面团</title>
   
 
 
 
 
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a16f9c19763053979b46d47c92ea123b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -145,8 +177,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-right page-archive">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -162,7 +193,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <h1 class="site-subtitle" itemprop="description"></h1>
       
   </div>
 
@@ -201,6 +232,36 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
 
       
     </ul>
@@ -219,1577 +280,421 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
-    
+
+  
+  
+  
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
+
+      <span class="archive-page-counter">
+        
+        
+        
+          
+        
+        嗯..! 目前共计 17 篇日志。 继续努力。
+      </span>
+
       
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://damiantuan.xyz/2020/03/30/爬取薄荷网所有食物的营养数据，并分类放入excel中/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="PG-55">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="哟，一个大面团">
-    </span>
-
-    
-      <header class="post-header">
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/30/爬取薄荷网所有食物的营养数据，并分类放入excel中/" itemprop="url">爬取薄荷网所有食物的营养数据，并分类放入excel中</a></h1>
         
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-30T18:30:39+08:00">
-                2020-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python爬虫/" itemprop="url" rel="index">
-                    <span itemprop="name">python爬虫</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
         
           
-            <p>最近想要减肥，想着先从食物入手，在网上查了一下，发现有一个叫<a href="http://www.boohee.com" target="_blank" rel="external">薄荷</a>的网站还是不错的，食物都做了详细的分类，并且所有的营养都做了数据的量化，作为制定饮食计划的参考还是不错的。打算先大致的看一下常见的食物营养做到心中有数，再来制定计划。我同时还发现了网上有一篇文章，已经有人爬过<a href="https://blog.csdn.net/Croyance_M/article/details/100668227" target="_blank" rel="external">薄荷</a>了，但是只是在列表也爬取了热量数据，并没有进到详情页去爬取其他的营养参数。</p>
-<p>我们先进到<a href="http://www.boohee.com" target="_blank" rel="external">薄荷</a>的<a href="http://www.boohee.com/food/" target="_blank" rel="external">食物</a>页面，发现网站将所收录的食物分成了11个大类，我想是将每一个大类放进一个excel表格的sheet里，那么这样的话就有11个sheet了。</p>
-<p><img src="https://s1.ax1x.com/2020/03/31/GKVHiV.png" alt="GKVHiV.png"></p>
-<p>再来看到每一个分类的链接，发现用了短链，在短链的前面应该加上网站的域名’www.boohee.com’，那么先把分类页面爬取下来即可。</p>
-<p><img src="https://s1.ax1x.com/2020/03/31/GKZMJf.png" alt="GKZMJf.png"></p>
-<p>导包侠，先预测大概需要那些包<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</div><div class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Pool</div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">import</span> openpyxl</div><div class="line"><span class="keyword">import</span> time</div></pre></td></tr></table></figure></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">group_url</span><span class="params">()</span>:</span></div><div class="line">    url = <span class="string">'http://www.boohee.com/food/'</span></div><div class="line">    res = requests.get(url)</div><div class="line">    html = res.text</div><div class="line">    bs = BeautifulSoup(html,<span class="string">"html.parser"</span>)</div><div class="line">      <span class="comment">#装每种食物种类的url</span></div><div class="line">    li = bs.find(class_=<span class="string">'row'</span>).find_all(<span class="string">'li'</span>)  <span class="comment">#每种食物大类的url</span></div><div class="line">    <span class="keyword">for</span> f <span class="keyword">in</span> li:  <span class="comment">#f代表每种食物大类</span></div><div class="line">        group_url = f.find(class_=<span class="string">"img-box"</span>).find(<span class="string">'a'</span>)[<span class="string">'href'</span>]</div><div class="line">        group_url = <span class="string">'http://www.boohee.com'</span>+group_url</div><div class="line">        <span class="keyword">yield</span> group_url    <span class="comment">#group_url是每一种食物大类的url</span></div></pre></td></tr></table></figure>
-<p>因为设计是爬取了一个大类就写一次sheet，所以这里使用了<code>yield</code>，每爬取一次处理一次，剩下的后续等待。</p>
-<p>进到分类里面之后就是该分类下面的食物列表了，我发现每一类下面食物大概都有10页的，一页有10种食物，那先把所有的翻页链接拿下。</p>
-<p><img src="https://s1.ax1x.com/2020/03/31/GKZH0A.png" alt="GKZH0A.png"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">book_url</span><span class="params">(group_url)</span>:</span> </div><div class="line">    urls = []   <span class="comment">#存储每类食物中下的翻页</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">11</span>):</div><div class="line">        page_url = group_url+<span class="string">'?page='</span>+str(i)</div><div class="line">        urls.append(page_url)</div><div class="line">        <span class="comment"># urls存储的是每一类食物中的所有页</span></div><div class="line">    <span class="keyword">return</span> urls</div></pre></td></tr></table></figure>
-<p>在具体的一页中获取该页的所有食物链接，并进入每个链接中获取食物的所有信息。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_info</span><span class="params">(urls)</span>:</span>    </div><div class="line">    data = []</div><div class="line">    food_end = []</div><div class="line">    pool = Pool(processes=<span class="number">4</span>)</div><div class="line">    info = []</div><div class="line">    info_url = []    <span class="comment">#食物详情的url</span></div><div class="line">    s = pool.map(requests.get,urls)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> s:</div><div class="line">        html = i.text</div><div class="line">        bs = BeautifulSoup(html,<span class="string">"html.parser"</span>)</div><div class="line">        group = bs.find(class_=<span class="string">'widget-food-list pull-right'</span>).find(<span class="string">'h3'</span>).text    <span class="comment">#食物类别</span></div><div class="line">        end = bs.find_all(class_=<span class="string">'img-box pull-left'</span>)</div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> end:</div><div class="line">            info_url.append(<span class="string">'http://www.boohee.com&#123;0&#125;'</span>.format(j.find(<span class="string">'a'</span>)[<span class="string">'href'</span>]))</div><div class="line">        </div><div class="line">    data.append(pool.map(get_detil,info_url))</div><div class="line">    frame = pd.DataFrame(data=data[<span class="number">0</span>] ,columns=[<span class="string">'名称'</span> ,<span class="string">'又名'</span> ,<span class="string">'热量（大卡）'</span> ,<span class="string">'碳水化合物（g）'</span> ,<span class="string">'脂肪（g）'</span> ,<span class="string">'蛋白质（g）'</span> ,<span class="string">'建议'</span>])</div><div class="line">    <span class="keyword">return</span> group ,frame</div></pre></td></tr></table></figure>
-<p>上一段代码中的<code>get_detil</code>就是具体在详情页面中定位各种营养数据的实现过程</p>
-<p><img src="https://s1.ax1x.com/2020/03/31/GKeAhV.png" alt="GKeAhV.png"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_detil</span><span class="params">(url)</span>:</span></div><div class="line">    <span class="comment"># 获取详情页面的具体信息</span></div><div class="line">    print(url)</div><div class="line">    s = requests.get(url = url)</div><div class="line">    <span class="keyword">if</span> s.status_code != <span class="number">200</span>:</div><div class="line">        N = (<span class="string">''</span>, <span class="string">''</span>, <span class="string">''</span>, <span class="string">''</span>, <span class="string">''</span>, <span class="string">''</span>, <span class="string">''</span>)</div><div class="line">        <span class="keyword">return</span> N</div><div class="line">    text = s.text</div><div class="line">    html = etree.HTML(text)</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        name = html.xpath(<span class="string">'/html/body/div[1]/div[3]/div/h2/a[2]'</span>)[<span class="number">0</span>].tail   <span class="comment">#名字</span></div><div class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</div><div class="line">        name = <span class="string">''</span></div><div class="line">    other_name = html.xpath(<span class="string">'/html/body/div[1]/div[3]/div/div[2]/div[1]/div/ul/li[1]/b'</span>)[<span class="number">0</span>].tail    <span class="comment">#别名</span></div><div class="line">    calories = html.xpath(<span class="string">'/html/body/div[1]/div[3]/div/div[2]/div[2]/div/dl[2]/dd[1]/span[2]/span'</span>)[<span class="number">0</span>].text    <span class="comment">#热量</span></div><div class="line">    carbohydrate = html.xpath(<span class="string">'/html/body/div[1]/div[3]/div/div[2]/div[2]/div/dl[2]/dd[2]/span[2]'</span>)[<span class="number">0</span>].text    <span class="comment">#碳水化合物</span></div><div class="line">    adipose = html.xpath(<span class="string">'/html/body/div[1]/div[3]/div/div[2]/div[2]/div/dl[3]/dd[1]/span[2]'</span>)[<span class="number">0</span>].text    <span class="comment">#脂肪</span></div><div class="line">    protein = html.xpath(<span class="string">'/html/body/div[1]/div[3]/div/div[2]/div[2]/div/dl[3]/dd[2]/span[2]'</span>)[<span class="number">0</span>].text    <span class="comment">#蛋白质</span></div><div class="line">    suggestion = html.xpath(<span class="string">'/html/body/div[1]/div[3]/div/div[2]/div[1]/p/b'</span>)[<span class="number">0</span>].tail    <span class="comment">#建议</span></div><div class="line">    <span class="keyword">return</span> name ,other_name ,calories ,carbohydrate ,adipose ,protein ,suggestion</div></pre></td></tr></table></figure>
-<p>上面的<code>get_detil</code>的对名字做处理是后面运行的时候才加的，主要是发现了有一些食物在列表页面是有名字的，但是到了详情页面中的时候，名字字段就缺失了，这种情况下xpath的定位就会发生异常，所以我们这里就这样处理先。一开始想在列表也上用名字的，但是这样将会耗费大量的时间在请求上，所以用详情页中的面包屑导航中的信息，但有些面包屑会缺失掉一点。</p>
-<p><img src="https://s1.ax1x.com/2020/03/31/GKmsaR.png" alt="GKmsaR.png"></p>
-<blockquote>
-<p>这是正常的面包屑</p>
-</blockquote>
-<p><img src="https://s1.ax1x.com/2020/03/31/GKmHit.png" alt="GKmHit.png"></p>
-<blockquote>
-<p>这是异常的面包屑，缺失了分类信息</p>
-</blockquote>
-<p>爬取到的信息要保存，因为信息不是很多，而且我这台电脑上没有安装数据库，所以我就用excel进行保存了。不同的分类保存在不同的sheet里，一开始想直接用pandas模块的excel写入方法的，后面发现不行，找了挺多资料，也做了很多的尝试，发现用openpyxl模块可以实现。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_excel</span><span class="params">(data,sheet_name)</span>:</span></div><div class="line">    writer = pd.ExcelWriter(<span class="string">'Excel_test.xlsx'</span>,engin=<span class="string">'openpyxl'</span>)</div><div class="line">    book = openpyxl.load_workbook(writer.path)</div><div class="line">    writer.book = book</div><div class="line">    df = data</div><div class="line">    df.to_excel(excel_writer=writer,sheet_name=sheet_name)</div><div class="line">    writer.save()</div><div class="line">    writer.close()</div></pre></td></tr></table></figure>
-<p>后面就是把具体的实现步骤连接起来了。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    start_time = time.time()</div><div class="line">    url = group_url()</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> url:</div><div class="line">        r = book_url(group_url=i)</div><div class="line">        e = get_info(urls=r)</div><div class="line">        save_excel(data=e[<span class="number">1</span>],sheet_name=e[<span class="number">0</span>])</div><div class="line">    end_time = time.time()</div><div class="line">    print(end_time - start_time)</div></pre></td></tr></table></figure>
-<p>整个爬虫下来其实没有什么值得说的，如果是单线程的话耗时真的是太久，分析一下，这个爬虫其实最耗时应该是在获取详情的地方，写入excel的数据量并不是太大，所以针对请求做了多线程处理。一开始只是加了一处，发现处理起来快很多，后面在将爬取数据处理成dataFrame中也加入了多线程，整个爬虫的速度确实有变快。</p>
-<p>这个爬虫不是太难，就简单的做一个练手的记录吧。</p>
-<p><img src="https://s1.ax1x.com/2020/03/31/GKnSds.png" alt="GKnSds.png"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://damiantuan.xyz/2018/06/09/爬取深圳证券交易所专题统计/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="PG-55">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="哟，一个大面团">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/09/爬取深圳证券交易所专题统计/" itemprop="url">爬取深圳证券交易所专题统计</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T05:30:39+08:00">
-                2018-06-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python爬虫/" itemprop="url" rel="index">
-                    <span itemprop="name">python爬虫</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>有一段时间没有更新博客了，其中原因很多，先是接下了一个公司的工作，当时项目很急，也经常加班，也造成了没有时间去更新博客，后面因为工作中的一些理念不同，我也离开了那个公司到别的地方去工作了，换了新工作很多东西需要去学习和熟悉，换了工作也换了住的地方，这也花费了很多的时间去处理。本来这篇文章在过年的时候就想写的了，结果一晃都半年过去了，现在才动笔。</p>
-<blockquote>
-<p>首先还是老规矩，做爬虫，先分析网络请求。其中的目标URL是<a href="http://www.szse.cn/main/marketdata/zttj_front/" target="_blank" rel="external">深圳交易所专题统计</a>，我们要爬取的就是其中的主要财务指标，如图所示.<br><img src="https://s1.ax1x.com/2018/06/09/CbqQUO.png" alt="CbqQUO.png"></p>
-<p>这样看到这些报告的链接，很多都直接是指向文件的链接，这意味着我们如果直接访问这些链接就相当于是直接访问文件了，如果要保存到本地的话我们只需要用二进制讲访问返回的内容写到本地即可。多翻几页能看出来，文件都是doc，docx，pdf，xlsx，还有shtml之类的组成的，这些不影响，还是采取使用二进制写进到本地进行存储，得到文件之后再进行处理。<br><img src="https://s1.ax1x.com/2018/06/09/Cbqwa8.png" alt="Cbqwa8.png"></p>
-<p>我们再往下看，发现一共有10页，我们尝试点击翻页，看看浏览器上面的链接有没有上面变化。结果我们发现，并没有在url中暴露翻页的信息。<br><img src="https://s1.ax1x.com/2018/06/09/CbqDPg.png" alt="CbqDPg.png"></p>
-<p>如此这般，那么只只好抓包分析了，上F12，然后点解下一页分析一下请求的情况。<br><img src="https://s1.ax1x.com/2018/06/09/CbqrGQ.png" alt="CbqrGQ.png"></p>
-<p>这样看来就很明显了，请求不是很多，不得不说金融行业真是话不多，但是说话都命中要害，减少了很多不必要的开销。看图我们发现是一个post请求，让后返回了一个HTML页面，我们可以看到返回的HTML中有第二页所出现的报告的名字和相应的链接，那么我们也不用去分析别的链接了，就是这个链接了，下面进行分析。</p>
-<p><img src="https://s1.ax1x.com/2018/06/09/CbqTz9.png" alt="CbqTz9.png"></p>
-<p>我们可以看到，翻页的时候触发了一个js，再加上一个随机的浮点型数字，我当时翻了一下网页中的代码，奈何金融行业比较社会，人狠话不多，基本没看懂这个随机数是怎么来的，并且每次点击翻页的随机数都不一样，从这个地方看，我基本就放弃使用requests或是urllib来进行访问了。不过爬虫与反爬就是这样子，你有张良计，我有过墙梯，直接使用python发包不行的话就只能借助别的工具来进行访问了。</p>
-<p>介绍一个小工具，<a href="http://phantomjs.org/" target="_blank" rel="external">phantomjs</a>，网上有很多这个工具的教程，重复phantomjs入门使用就不在这里赘述了，关于这个工具，大家可以理解成一个没有界面的浏览器即可。这个小工具下载好了直接双击，然后就会自动在系统里面了，使用的时候只需要将phantomJS和脚本放在一起就行了。</p>
-<p>首先，我们先来实例化一个phantomJS无头浏览器。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">driver = webdriver.PhantomJS()</div></pre></td></tr></table></figure></p>
-</blockquote>
-<p><a href="https://imgchr.com/i/CbOpkT" target="_blank" rel="external"><img src="https://s1.ax1x.com/2018/06/09/CbOpkT.md.png" alt="CbOpkT.md.png"></a></p>
-<blockquote>
-<p>因为我们第一次打开目标URL的时候其实时用的get请求，于是我们也可以尝试使用phantomJS来进行get请求。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">driver.get(<span class="string">"http://www.szse.cn/main/marketdata/zttj_front/"</span>)    <span class="comment">#coding='ISO-8859-1'</span></div><div class="line">html = driver.page_source</div></pre></td></tr></table></figure></p>
-<p>我们发现，在这段代码中可以获取正确的HTML，于是我们再尝试定位到下一页的按钮，尝试是否可以正常点击下一页。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">driver.find_element_by_xpath(<span class="string">'//*[@id="Table1"]/tbody/tr/td[3]/input[2]'</span>).click()</div></pre></td></tr></table></figure></p>
-<p>运行之后发现，在phantomJS的click()执行之后，确实是可以获取第二页的HTML，那么翻页暂时来说不是问题了，下面的问题就是怎么把每一页的链接获取到，然后下载文件到本地。我们在网页上点击文件的链接，发现可以直接打开一些文件，这时我们就可以在获取文件链接之后使用python进行请求发包了。来看看下面这段代码。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 获取文件链接，此处doc包括但不限于doc文件，还报考页面中所有的链接，</span></div><div class="line"><span class="comment"># 当然，更正确的叫法应该get_url，但是当时只想到了链接直接指向文档，就get_文档了</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_doc</span><span class="params">(html)</span>:</span></div><div class="line">    source = html</div><div class="line">    bsContent = BeautifulSoup(source, <span class="string">'html.parser'</span>)</div><div class="line">    urlContent = bsContent.find_all(class_=<span class="string">'tdline2'</span>)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> urlContent:</div><div class="line">        a = i.find(<span class="string">"a"</span>)</div><div class="line">        url = a.get(<span class="string">'href'</span>)</div><div class="line">        download_url = domain_url + url</div><div class="line">        download(download_url)</div><div class="line"></div><div class="line"><span class="comment"># 下载文件</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">download</span><span class="params">(download_url)</span>:</span></div><div class="line">    <span class="comment"># 记录下载过的文档的链接</span></div><div class="line">    <span class="keyword">with</span> open(file=<span class="string">'url_log.txt'</span>,mode=<span class="string">'r+'</span>) <span class="keyword">as</span> fp:</div><div class="line">        log=fp.read()</div><div class="line">        <span class="keyword">if</span> download_url <span class="keyword">not</span> <span class="keyword">in</span> log:</div><div class="line">            r = requests.get(url=download_url)</div><div class="line">            <span class="keyword">with</span> open(file=download_url[download_url.rfind(<span class="string">'/'</span>) + <span class="number">1</span>:], mode=<span class="string">"wb"</span>) <span class="keyword">as</span> code:</div><div class="line">                code.write(r.content)</div><div class="line">            fp.write(download_url + <span class="string">"\n"</span>)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">pass</span></div></pre></td></tr></table></figure></p>
-<p>这样的话文件是下载下来的，但是也仅仅是下载下来了，里面的信息没有办法提取出来，关于这几种文件在python中怎么解析，相关的模块的文档也有，这里也不去介绍入门了。这里有一点需要注意的是，因为doc的兼容性问题，我们可以将其转换成docx再来进行读取，这个地方需要电脑安装了MS office或是wps，因为是调用这两个应用程序的组件进行转换的，此处需要声明一下。多的不说的，代码的注释还是比较详细的，我直接讲代码放出。</p>
-<p>整个脚本的代码如下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*-coding:'utf-8' -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> win32com</div><div class="line"><span class="keyword">from</span> win32com.client <span class="keyword">import</span> Dispatch</div><div class="line"><span class="keyword">from</span> win32com <span class="keyword">import</span> client</div><div class="line"><span class="keyword">from</span> docx <span class="keyword">import</span> Document</div><div class="line"><span class="keyword">import</span> xlrd</div><div class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</div><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">from</span> pdfminer.pdfparser <span class="keyword">import</span> PDFParser,PDFDocument</div><div class="line"><span class="keyword">from</span> pdfminer.pdfinterp <span class="keyword">import</span> PDFResourceManager, PDFPageInterpreter</div><div class="line"><span class="keyword">from</span> pdfminer.converter <span class="keyword">import</span> PDFPageAggregator</div><div class="line"><span class="keyword">from</span> pdfminer.layout <span class="keyword">import</span> LTTextBoxHorizontal,LAParams</div><div class="line"><span class="keyword">from</span> pdfminer.pdfinterp <span class="keyword">import</span> PDFTextExtractionNotAllowed</div><div class="line"></div><div class="line">domain_url = <span class="string">'http://www.szse.cn'</span></div><div class="line"></div><div class="line"><span class="comment"># 分析网页，下载文件</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_html</span><span class="params">()</span>:</span></div><div class="line"></div><div class="line">    driver = webdriver.PhantomJS()</div><div class="line">    driver.get(<span class="string">"http://www.szse.cn/main/marketdata/zttj_front/"</span>)  <span class="comment"># coding='ISO-8859-1'</span></div><div class="line">    html = driver.page_source</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span>  range(<span class="number">0</span>,<span class="number">10</span>):</div><div class="line">        <span class="keyword">if</span> i ==<span class="number">0</span>:</div><div class="line">            get_doc(html=html)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">try</span>:</div><div class="line">                driver.find_element_by_xpath(<span class="string">'//*[@id="Table1"]/tbody/tr/td[3]/input[2]'</span>).click()</div><div class="line">                time.sleep(<span class="number">3</span>)</div><div class="line">                get_doc(driver.page_source)</div><div class="line">            <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</div><div class="line">                <span class="keyword">break</span></div><div class="line"></div><div class="line"><span class="comment"># 获取文件链接，此处doc包括但不限于doc文件，还报考页面中所有的链接，</span></div><div class="line"><span class="comment"># 当然，更正确的叫法应该get_url，但是当时只想到了链接直接指向文档，就get_文档了</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_doc</span><span class="params">(html)</span>:</span></div><div class="line">    source = html</div><div class="line">    bsContent = BeautifulSoup(source, <span class="string">'html.parser'</span>)</div><div class="line">    urlContent = bsContent.find_all(class_=<span class="string">'tdline2'</span>)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> urlContent:</div><div class="line">        a = i.find(<span class="string">"a"</span>)</div><div class="line">        url = a.get(<span class="string">'href'</span>)</div><div class="line">        download_url = domain_url + url</div><div class="line">        download(download_url)</div><div class="line"></div><div class="line"><span class="comment"># 下载文件</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">download</span><span class="params">(download_url)</span>:</span></div><div class="line">    <span class="keyword">with</span> open(file=<span class="string">'url_log.txt'</span>,mode=<span class="string">'r+'</span>) <span class="keyword">as</span> fp:</div><div class="line">        log=fp.read()</div><div class="line">        <span class="keyword">if</span> download_url <span class="keyword">not</span> <span class="keyword">in</span> log:</div><div class="line">            r = requests.get(url=download_url)</div><div class="line">            <span class="keyword">with</span> open(file=download_url[download_url.rfind(<span class="string">'/'</span>) + <span class="number">1</span>:], mode=<span class="string">"wb"</span>) <span class="keyword">as</span> code:</div><div class="line">                code.write(r.content)</div><div class="line">            fp.write(download_url + <span class="string">"\n"</span>)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">pass</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">translate_doc</span><span class="params">(f)</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">    将doc文件转换为docx</span></div><div class="line"><span class="string">    """</span></div><div class="line">    word = client.Dispatch(<span class="string">'kwps.Application'</span>)    <span class="comment">#如果电脑安装是MS office，应该使用word.Application</span></div><div class="line">    word.Visible = <span class="number">0</span></div><div class="line">    doc = word.Documents.Open(f)        <span class="comment"># 目标路径下的文件</span></div><div class="line">    doc.SaveAs2(f[<span class="number">0</span>:<span class="number">-3</span>]+<span class="string">'docx'</span>,<span class="number">12</span>)  <span class="comment"># 转化后路径下的文件</span></div><div class="line">    doc.Close()</div><div class="line">    word.Quit()</div><div class="line">    parse_docx(f[<span class="number">0</span>:<span class="number">-3</span>]+<span class="string">'docx'</span>)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_docx</span><span class="params">(f)</span>:</span></div><div class="line"></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">    读取docx中的表格</span></div><div class="line"><span class="string">    """</span></div><div class="line">    d = Document(f)</div><div class="line">    t = d.tables[<span class="number">0</span>]</div><div class="line">    rows=len(t._cells)</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="keyword">for</span> row <span class="keyword">in</span> range (<span class="number">1</span>,(rows//t._column_count)+<span class="number">1</span>):</div><div class="line">            stock_number = t.cell(row,<span class="number">0</span>).text</div><div class="line">            stock_name = t.cell(row,<span class="number">1</span>).text</div><div class="line">            profits = t.cell(row,<span class="number">2</span>).text</div><div class="line">            per_earn = t.cell(row,<span class="number">3</span>).text</div><div class="line">            per_profits=t.cell(row,<span class="number">4</span>).text</div><div class="line">            per_cash=t.cell(row,<span class="number">5</span>).text</div><div class="line">            <span class="keyword">if</span> t.cell(row,<span class="number">6</span>).text==<span class="string">''</span>:</div><div class="line">                r_plant =<span class="string">'无预案'</span></div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                r_plant=t.cell(row,<span class="number">6</span>).text</div><div class="line">            print(stock_number, stock_name, profits, per_earn, per_profits, per_cash, r_plant)</div><div class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</div><div class="line">        print(e)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_docx2</span><span class="params">(f)</span>:</span></div><div class="line">    <span class="string">'''</span></div><div class="line"><span class="string">    此函数作用是读取纯文本docx文件</span></div><div class="line"><span class="string">    :param f:文件参数</span></div><div class="line"><span class="string">    :return:</span></div><div class="line"><span class="string">    '''</span></div><div class="line">    document = Document(f)</div><div class="line">    <span class="keyword">for</span> paragraph <span class="keyword">in</span> document.paragraphs:</div><div class="line">        print(paragraph.text)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_pdf</span><span class="params">(f)</span>:</span></div><div class="line">    fp = open(f, <span class="string">'rb'</span>) <span class="comment"># 以二进制读模式打开</span></div><div class="line">    <span class="comment">#用文件对象来创建一个pdf文档分析器</span></div><div class="line">    praser = PDFParser(fp)</div><div class="line">    <span class="comment"># 创建一个PDF文档</span></div><div class="line">    doc = PDFDocument()</div><div class="line">    <span class="comment"># 连接分析器 与文档对象</span></div><div class="line">    praser.set_document(doc)</div><div class="line">    doc.set_parser(praser)</div><div class="line"></div><div class="line">    <span class="comment"># 提供初始化密码</span></div><div class="line">    <span class="comment"># 如果没有密码 就创建一个空的字符串</span></div><div class="line">    doc.initialize()</div><div class="line"></div><div class="line">    <span class="comment"># 检测文档是否提供txt转换，不提供就忽略</span></div><div class="line">    <span class="keyword">if</span> <span class="keyword">not</span> doc.is_extractable:</div><div class="line">        <span class="keyword">raise</span> PDFTextExtractionNotAllowed</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="comment"># 创建PDf 资源管理器 来管理共享资源</span></div><div class="line">        rsrcmgr = PDFResourceManager()</div><div class="line">        <span class="comment"># 创建一个PDF设备对象</span></div><div class="line">        laparams = LAParams()</div><div class="line">        device = PDFPageAggregator(rsrcmgr, laparams=laparams)</div><div class="line">        <span class="comment"># 创建一个PDF解释器对象</span></div><div class="line">        interpreter = PDFPageInterpreter(rsrcmgr, device)</div><div class="line"></div><div class="line">        <span class="comment"># 循环遍历列表，每次处理一个page的内容</span></div><div class="line">        <span class="keyword">for</span> page <span class="keyword">in</span> doc.get_pages(): <span class="comment"># doc.get_pages() 获取page列表</span></div><div class="line">            interpreter.process_page(page)</div><div class="line">            <span class="comment"># 接受该页面的LTPage对象</span></div><div class="line">            layout = device.get_result()</div><div class="line">            <span class="comment"># 这里layout是一个LTPage对象 里面存放着 这个page解析出的各种对象 一般包括LTTextBox, LTFigure, LTImage, LTTextBoxHorizontal 等等 想要获取文本就获得对象的text属性，</span></div><div class="line">            <span class="keyword">for</span> x <span class="keyword">in</span> layout:</div><div class="line">                <span class="keyword">if</span> (isinstance(x, LTTextBoxHorizontal)):</div><div class="line">                    <span class="keyword">with</span> open(str(f)[:<span class="number">-3</span>]+<span class="string">'txt'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</div><div class="line">                        results = x.get_text()</div><div class="line">                        print(results)</div><div class="line">                        f.write(results + <span class="string">'\n'</span>)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_excel</span><span class="params">(f)</span>:</span></div><div class="line">    workbook=xlrd.open_workbook(f)</div><div class="line">    <span class="keyword">for</span> sheet_name <span class="keyword">in</span> workbook.sheet_names():</div><div class="line">        sheet=workbook.sheet_by_name(sheet_name)</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, sheet.nrows):</div><div class="line">            name = sheet.row(i)[<span class="number">1</span>].value</div><div class="line">            deal_money = str(sheet.row(i)[<span class="number">2</span>].value)</div><div class="line">            print(name, deal_money)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_shtml</span><span class="params">(f)</span>:</span></div><div class="line">    <span class="keyword">with</span> open(f, <span class="string">'r'</span>) <span class="keyword">as</span> fp:</div><div class="line">        shtml = fp.read()</div><div class="line">        p = BeautifulSoup(shtml, <span class="string">'html.parser'</span>)</div><div class="line">        biaozhi = p.find_all(class_=<span class="string">'MsoNormal'</span>)</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> biaozhi:</div><div class="line">            print(i.get_text(), )</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">()</span>:</span></div><div class="line">    <span class="comment"># 遍历文件</span></div><div class="line">    PATH = <span class="string">r'D:\huarun\BankSpider_self\szse_spider'</span>  <span class="comment"># windows文件路径</span></div><div class="line">    files = os.listdir(PATH)</div><div class="line">    <span class="keyword">for</span> doc <span class="keyword">in</span> files:</div><div class="line">        <span class="keyword">if</span> os.path.splitext(doc)[<span class="number">1</span>] == <span class="string">'.docx'</span>:</div><div class="line">            <span class="keyword">try</span>:</div><div class="line">                parse_docx(PATH + <span class="string">'\\'</span> + doc)</div><div class="line">            <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</div><div class="line">                parse_docx2(PATH + <span class="string">'\\'</span> + doc)</div><div class="line">        <span class="keyword">elif</span> os.path.splitext(doc)[<span class="number">1</span>] == <span class="string">'.doc'</span> <span class="keyword">or</span> os.path.splitext(doc)[<span class="number">1</span>]==<span class="string">'.DOC'</span>:</div><div class="line">            <span class="keyword">try</span>:</div><div class="line">                translate_doc(PATH + <span class="string">'\\'</span> + doc)</div><div class="line">            <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</div><div class="line">                print(e)</div><div class="line">        <span class="keyword">elif</span> os.path.splitext(doc)[<span class="number">1</span>]==<span class="string">'.pdf'</span>:</div><div class="line">            <span class="keyword">try</span>:</div><div class="line">                parse_pdf(PATH+<span class="string">'\\'</span>+doc)</div><div class="line">            <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</div><div class="line">                print(e)</div><div class="line">        <span class="keyword">elif</span> os.path.splitext(doc)[<span class="number">1</span>]==<span class="string">'.xls'</span>:</div><div class="line">            <span class="keyword">try</span>:</div><div class="line">                parse_excel(PATH+<span class="string">'\\'</span>+doc)</div><div class="line">            <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</div><div class="line">                print(e)</div><div class="line">        <span class="keyword">elif</span> os.path.splitext(doc)[<span class="number">1</span>]==<span class="string">'.shtml'</span>:</div><div class="line">            <span class="keyword">try</span>:</div><div class="line">                parse_shtml(PATH+<span class="string">'\\'</span>+doc)</div><div class="line">            <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</div><div class="line">                print(e)</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    parse_html()</div><div class="line">    <span class="comment"># run()</span></div></pre></td></tr></table></figure></p>
-<p>最后实现的效果是可以进行增量爬取，因为已经爬取过的都会被记录下来，然后在获取到相同链接的时候忽略掉该链接的下载和解析，并且将文件都解析成字符串，如何分析，此处便是后话了。下图是当时爬取的一些记录。</p>
-</blockquote>
-<p><a href="https://imgchr.com/i/CbjSWF" target="_blank" rel="external"><img src="https://s1.ax1x.com/2018/06/09/CbjSWF.md.png" alt="CbjSWF.md.png"></a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://damiantuan.xyz/2018/04/05/用python检测窗体状态/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="PG-55">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="哟，一个大面团">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/05/用python检测窗体状态/" itemprop="url">用python检测窗体状态</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-05T11:01:46+08:00">
-                2018-04-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python-win32/" itemprop="url" rel="index">
-                    <span itemprop="name">python win32</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>之前的文章说了在做客户端的爬虫的时候我们需要对爬取的应用程序进行进程的监控，对出现的异常进行处理。后面又发现，其实在Windows上，窗体和进程的似乎没有什么关系（不知道对不对，比较对Windows的图形化不是很熟悉，错了请指正），就是进程一直都是很正常的，但是窗体可能出现未响应的情况。这个问题我想大家其实都遇过，电脑卡的时候，点击一个窗口，然后窗口卡了一下，再点击的时候整个窗口就变白了，然后在左上角跳出一个窗体未响应的提醒。就是这个样子的。<br>！<a href="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1522908316336&amp;di=b97580d04537425c7a796ed665315281&amp;imgtype=0&amp;src=http%3A%2F%2Fwenwen.soso.com%2Fp%2F20100130%2F20100130122717-272976562.jpg" target="_blank" rel="external">image</a></p>
-<p>这个其实涉及的知识点蛮多的，首先是win32方面的只是，然后还有mfc方面的知识，最后其实才是python方面的处理。我在网上找到了一个相应的文章<a href="https://www.cnblogs.com/icepng/p/5975168.html" target="_blank" rel="external">判断窗体是否无响应</a>，但是可能是我的水平不够高吧，对于一些解决方法看得云里雾里的。在着手解决的时候，自己old school的思维风格又占据了上风，强行要使用Windows系统进行窗体状态的监测，毕竟mfc这东西就是你Windows提出来的，不依靠你自身解决依靠谁。</p>
-<p>在Windows方面，python给出的资料确实有点少得可怜，我也是到处收集到一点代码片段，再慢慢组合起来，慢慢的摸索的，连猜带蒙写出来的，其实我给出的代码我自己本身也还是有挺多的不清错的地方，就希望有这方面的大神可以给点参考。</p>
-<p>还是写成了模块，对于工作上的信息进行了隐匿。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># coding:utf-8</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> win32com.client</div><div class="line"><span class="keyword">import</span> win32api</div><div class="line"><span class="keyword">import</span> win32gui</div><div class="line"><span class="keyword">import</span> win32process</div><div class="line"><span class="keyword">import</span> win32pdh</div><div class="line"><span class="keyword">import</span> ctypes</div><div class="line"><span class="keyword">import</span> time</div><div class="line"></div><div class="line"><span class="string">"""</span></div><div class="line"><span class="string">该模块为了解决客户端在爬取数据的时候的窗体未响应问题</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">"""</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Listen_gui_status</span><span class="params">()</span>:</span></div><div class="line"></div><div class="line"><span class="meta">    @staticmethod</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">check_gui</span><span class="params">()</span>:</span></div><div class="line">        <span class="comment"># junk是CPU的一些运行字段，instances是所有的进程名称，类型为list</span></div><div class="line">        junk, instances = win32pdh.EnumObjectItems(<span class="keyword">None</span>, <span class="keyword">None</span>,<span class="string">'process'</span>, win32pdh.PERF_DETAIL_WIZARD)</div><div class="line">        <span class="comment"># print(instances)</span></div><div class="line">        proc_ids=[]</div><div class="line">        proc_dict=&#123;&#125;</div><div class="line">        ubank_proc=<span class="keyword">None</span></div><div class="line">        <span class="keyword">for</span> instance <span class="keyword">in</span> instances:</div><div class="line">            <span class="keyword">if</span> instance <span class="keyword">in</span> proc_dict:</div><div class="line">            proc_dict[instance] = proc_dict[instance] + <span class="number">1</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            proc_dict[instance]=<span class="number">0</span></div><div class="line">            <span class="comment"># print(proc_dict)</span></div><div class="line">            <span class="comment"># print(proc_dict.items())</span></div><div class="line"></div><div class="line">        <span class="keyword">for</span> instance, max_instances <span class="keyword">in</span> proc_dict.items():    <span class="comment"># 此段方法是统计同名进程有多少个</span></div><div class="line">            <span class="keyword">for</span> inum <span class="keyword">in</span> range(max_instances+<span class="number">1</span>):</div><div class="line">            <span class="comment"># PdhOpenQuery：获取性能监视器数据查询句柄，返回一个句柄</span></div><div class="line">                hq = win32pdh.OpenQuery()</div><div class="line">                <span class="string">'''</span></div><div class="line"><span class="string">                MakeCounterPath:使用PDH_COUNTER_PATH_ELEMENTS结构中指定的成员创建一个完整的计数器路径。</span></div><div class="line"><span class="string">                如果函数成功，则返回ERROR_SUCCESS。</span></div><div class="line"><span class="string">                如果函数失败，返回值是系统错误代码或PDH错误代码</span></div><div class="line"><span class="string">                '''</span></div><div class="line">                path = win32pdh.MakeCounterPath( (<span class="keyword">None</span>,<span class="string">'process'</span>,instance, <span class="keyword">None</span>, inum,<span class="string">'ID Process'</span>) )</div><div class="line">                print(<span class="string">'inum'</span>,inum,<span class="string">'hq'</span>,hq,<span class="string">'path'</span>,path)</div><div class="line">                </div><div class="line">                <span class="comment"># PdhAddCounter:添加计数器</span></div><div class="line">                counter_handle=win32pdh.AddCounter(hq, path)</div><div class="line">                <span class="comment"># CollectQueryData:收集指定查询中所有计数器的当前原始数据值，并更新每个计数器的状态码。</span></div><div class="line">                win32pdh.CollectQueryData(hq)</div><div class="line">                <span class="comment"># GetFormattedCounterValue：获取指定计数器数值</span></div><div class="line">                types, val = win32pdh.GetFormattedCounterValue(counter_handle, win32pdh.PDH_FMT_LONG)</div><div class="line">                proc_ids.append((instance,str(val)))</div><div class="line">                win32pdh.CloseQuery(hq)</div><div class="line">                proc_ids.sort()</div><div class="line">        <span class="keyword">for</span> proc_name <span class="keyword">in</span> proc_ids:</div><div class="line">            <span class="keyword">if</span> proc_name[<span class="number">0</span>]==<span class="string">u'QQ.exe'</span>:</div><div class="line">                ubank_proc=proc_name[<span class="number">1</span>]</div><div class="line">                <span class="comment"># print(proc_name[1])</span></div><div class="line"></div><div class="line">        hWndList = []</div><div class="line">        qq_hWnd=[]</div><div class="line">        <span class="comment"># 获取窗口句柄</span></div><div class="line">        win32gui.EnumWindows(<span class="keyword">lambda</span> hWnd, param: param.append(hWnd), hWndList)</div><div class="line">        <span class="comment"># print ('------------------------------')</span></div><div class="line">        <span class="comment"># print  (hWndList)</span></div><div class="line">        <span class="comment"># print ('------------------------------')</span></div><div class="line">        <span class="comment"># 迭代</span></div><div class="line">        <span class="keyword">for</span> hWnd <span class="keyword">in</span> hWndList:</div><div class="line">            <span class="comment"># 获取窗口句柄对应的线程ID和进程ID</span></div><div class="line">            threadId, process_id = win32process.GetWindowThreadProcessId(hWnd)</div><div class="line">            <span class="keyword">if</span> process_id==int(ubank_proc):</div><div class="line">                <span class="comment"># print(threadId, process_id,hWnd)</span></div><div class="line">                ubank_hWnd.append(hWnd)</div><div class="line">        <span class="keyword">for</span> hWnd <span class="keyword">in</span> qq_hWnd:</div><div class="line">            <span class="string">'''</span></div><div class="line"><span class="string">            关于IsHungAppWindow(),Microsoft官方给出的解释是：</span></div><div class="line"><span class="string">            The return value is TRUE if the window stops responding; otherwise, it is FALSE. Ghost windows always return TRUE.</span></div><div class="line"><span class="string">            具体可以查看https://msdn.microsoft.com/en-us/library/windows/desktop/ms633526(v=vs.85).aspx</span></div><div class="line"><span class="string">            '''</span></div><div class="line">            status = ctypes.windll.user32.IsHungAppWindow(hWnd)</div><div class="line">            <span class="keyword">if</span> status:</div><div class="line">                time.sleep(<span class="number">30</span>)</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                <span class="keyword">pass</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</div><div class="line">    Listen_gui_status.check_gui()</div></pre></td></tr></table></figure></p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://damiantuan.xyz/2018/04/05/用python检测进程状态/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="PG-55">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="哟，一个大面团">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/05/用python检测进程状态/" itemprop="url">用python检测进程状态</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-05T09:11:52+08:00">
-                2018-04-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python-爬虫-Windows/" itemprop="url" rel="index">
-                    <span itemprop="name">python 爬虫 Windows</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>我们很多时候做客户端爬虫的时候，或者是在Windows上做项目的时候，我们都需要对目标进程进行监控，在目标进程出现异常的时候对我们的爬虫进行相应的异常处理。</p>
-<p>当时做这个的时候思路比较局限，可能是因为自己old school风格的原因吧，就想着怎么去做Windows编程，去请求系统的API，后面发现如果是去请求系统的API的话，第一是过程比较复杂，第二是在python方面，对Windows的一些介绍也比较少，像win32，win32api之类的，很多资料都不齐全，因为这些资料很多时候是面对有Windows编程有需要，或是对Windows编程比较有经验的人用的，入门的比较少。</p>
-<p>后面搞的时候还是请教了一些大佬，其中一个搞安全的大佬给了一个思路，你试试用安全的角度去考虑这个功能的实现。也要感谢自己当时在安全的路上跌跌撞撞的走过几年吧，这样一样就有了一个解决的思路，虽然比较猥琐，做了一下搬砖的工作，还是比较快解决的。用到了一个名叫psutil的模块。更多的详情，可以参考psutil的github主页<a href="https://github.com/giampaolo/psutil" target="_blank" rel="external">psutil</a>，功能还是很多很强大的。</p>
-<p>惯例，直接上代码，代码注释非常的清晰。因为这个是工作中用到的一个模块，我用类进行了封装。对于进程名，因为工作问题我隐去了，换成了一个QQ的进程。</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*-coding:utf-8-*-</span></div><div class="line"><span class="comment"># _by:lam</span></div><div class="line"></div><div class="line"><span class="keyword">import</span>  psutil</div><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Listen_from_status</span><span class="params">()</span>:</span></div><div class="line"></div><div class="line">    <span class="string">"""</span></div><div class="line"><span class="string">    该模块为了解决客户端在爬取数据的时候的进程异常的问题</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">    """</span></div><div class="line"></div><div class="line"><span class="meta">    @staticmethod</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">listen</span><span class="params">()</span>:</span></div><div class="line">        <span class="comment"># name为需要监测进程名</span></div><div class="line">        name = <span class="string">'QQ.exe'</span></div><div class="line">        <span class="comment"># 获取系统此时所有的进程名字，进程pid，进程开始时间</span></div><div class="line">        <span class="keyword">for</span> proc <span class="keyword">in</span> psutil.process_iter():</div><div class="line">            <span class="keyword">if</span> name <span class="keyword">in</span> proc.name():</div><div class="line">                <span class="comment"># psutil.Process()这个函数接收一个进程pid作为参数，获取进程的信息，开始时间，进程名等</span></div><div class="line">                p = psutil.Process(proc.pid)</div><div class="line">                <span class="comment"># 判断进程的状态</span></div><div class="line">                <span class="keyword">if</span> p.status() == psutil.STATUS_RUNNING:</div><div class="line">                    <span class="keyword">pass</span></div><div class="line">                <span class="keyword">else</span>:</div><div class="line">                    time.sleep(<span class="number">30</span>)</div><div class="line">        <span class="keyword">return</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</div><div class="line">    Listen_from_status.listen()</div></pre></td></tr></table></figure>
-<blockquote>
-<p>psutil中定义的进程的状态有这几种，当然，我们也可以用字符串去代替他的状态情况。状态的字符串就是STATUS_后面的名字换成小写字母即可。（）中提示的是适用的系统。</p>
-</blockquote>
-<p>psutil.STATUS_RUNNING</p>
-<p>psutil.STATUS_SLEEPING</p>
-<p>psutil.STATUS_DISK_SLEEP</p>
-<p>psutil.STATUS_STOPPED</p>
-<p>psutil.STATUS_TRACING_STOP</p>
-<p>psutil.STATUS_ZOMBIE</p>
-<p>psutil.STATUS_DEAD</p>
-<p>psutil.STATUS_WAKE_KILL</p>
-<p>psutil.STATUS_WAKING</p>
-<p>psutil.STATUS_IDLE(OSX, FreeBSD)</p>
-<p>psutil.STATUS_LOCKED(FreeBSD)</p>
-<p>psutil.STATUS_WAITING(FreeBSD)</p>
-<p>psutil.STATUS_SUSPENDED(NetBSD</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://damiantuan.xyz/2018/04/03/Python模拟登陆某网教师教育网/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="PG-55">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="哟，一个大面团">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/03/Python模拟登陆某网教师教育网/" itemprop="url">python模拟登录某网教师教育网</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-03T16:11:52+08:00">
-                2018-04-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python-爬虫-web安全/" itemprop="url" rel="index">
-                    <span itemprop="name">python 爬虫 web安全</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>本文转载自看雪论坛【作者】rdsnow</p>
-<p>不得不说，最近的 Python 蛮火的，我也稍稍了解了下，并试着用 Python 爬取网站上的数据</p>
-<p>不过有些数据是要登陆后才能获取的，我们每年都要到某教师教育网学习一些公需科目，就拿这个网站试试，关键是对网站的分析</p>
-<p>打开浏览器，输入网站网址 <a href="http://www.jste.net.cn" target="_blank" rel="external">http://www.jste.net.cn</a> ，按F12调出浏览器的开发者工具，选中 Network ，并勾选 Preserve log，防止切换网页时信息丢失</p>
-<p><img src="http://image.3001.net/images/20180402/15226536367045.png!small" alt="image"></p>
-<p>网页上输入账号，密码输入“123456”，验证码输入“abcde”，验证码不要输正确的，否则密码错5次，会被网站锁定账号30个小时，验证码倒是可以随便错</p>
-<p>登陆后（当然登陆不上，会跳转到另一个登陆页面），在开发者工具中看到与服务器的数据交换</p>
-<p><img src="http://image.3001.net/images/20180402/15226536524277.png!small" alt="image"></p>
-<p>第一个是get验证码图片的，第二个就是向网站提交数据的，点一下第二个信息</p>
-<p><img src="http://image.3001.net/images/20180402/15226536672402.png!small" alt="image"></p>
-<p>这是个 Post 请求，重点看红框中的提交数据，randomCode就是输入的验证码了，x,y应该是点击的按钮控件的位置了，有cookie后就没有提交这个数据了，可以忽视，returnURL、appId，encrypt每次都是一样的，也不用管他，重点是 reqId 和 req 这两个 key 的值了，reqId猜想是点击按钮时取到的时间戳，可以复制这个数据到验证下 Unix时间戳(Unix timestamp)转换工具 单位选毫秒，确实是刚刚提交数据的时间，就剩下一个数据了，这个key的数值很长，下面来寻找这个数据是从哪里的来的</p>
-<p>可以看到 login.jsp 下可以看到 encode.js、string.js、des.js 从名字上就能看出这几个是用来加密提交数据的，右键 login.jsp，选择 “Open in Sources panel”</p>
-<p><img src="http://image.3001.net/images/20180402/15226537006674.png!small" alt="image"></p>
-<p><img src="http://image.3001.net/images/20180402/15226537232555.png!small" alt="image"></p>
-<p>可以跳转到 “源” 选项卡，看到 ’login.jsp‘ 的源码，如果格式混乱，比如所有代码在一行中，不便于观看，可以点击界面下方</p>
-<p><img src="http://image.3001.net/images/20180402/15226538607653.png!small" alt="image"></p>
-<p>的中括号，开发者工具会自动给你重新格式化代码。</p>
-<p>仔细分析 login.jsp 的代码，看到</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">doOk</span>(<span class="params">frm</span>) </span>&#123;</div><div class="line"> </div><div class="line"> </div><div class="line">            <span class="keyword">var</span> el = frm.elements[<span class="string">"loginName"</span>];</div><div class="line">            <span class="keyword">var</span> loginName = el.value.replace(<span class="regexp">/ /g</span>, <span class="string">""</span>);</div><div class="line">            el.value = loginName;</div><div class="line">            <span class="keyword">if</span> (isEmpty(loginName)) &#123;</div><div class="line">                alert(<span class="string">"请输入登录名"</span>);</div><div class="line">                el.focus();</div><div class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">            &#125;</div><div class="line"> </div><div class="line"> </div><div class="line">            el = frm.elements[<span class="string">"pwd"</span>];</div><div class="line">            el.value = el.value.replace(<span class="regexp">/ /g</span>, <span class="string">""</span>);</div><div class="line">            <span class="keyword">var</span> pwd=el.value;</div><div class="line">            <span class="keyword">if</span> (isEmpty(el.value)) &#123;</div><div class="line">                alert(<span class="string">"请输入登录密码"</span>);</div><div class="line">                el.focus();</div><div class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">            &#125;</div><div class="line"> </div><div class="line">            <span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"> </div><div class="line">            pwd = encode(loginName, pwd);<span class="comment">//密码第一次加密，可以跟进</span></div><div class="line">            frm.elements[<span class="string">"encrypt"</span>].value = <span class="string">"1"</span>;</div><div class="line"> </div><div class="line">            <span class="keyword">var</span> validCode=<span class="string">""</span>;</div><div class="line">            el=frm.elements[<span class="string">"randomCode"</span>];</div><div class="line">            <span class="keyword">if</span>(el)&#123;</div><div class="line">                el.value=el.value.replace(<span class="regexp">/ /g</span>,<span class="string">""</span>);</div><div class="line">                <span class="keyword">if</span> (isEmpty(el.value)) &#123;</div><div class="line">                    alert(<span class="string">"请输入登录密码"</span>);</div><div class="line">                    el.focus();</div><div class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">                &#125;</div><div class="line">                validCode=el.value;</div><div class="line">            &#125;</div><div class="line">            loginName=<span class="built_in">encodeURI</span>(loginName);<span class="comment">//避免中文问题 进行URL编码</span></div><div class="line">            <span class="keyword">var</span> reqId=(<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime()+<span class="string">""</span>;<span class="comment">//获取时间戳给 reqId</span></div><div class="line">            <span class="keyword">var</span> str=strEnc(loginName+<span class="string">"\n"</span>+pwd,reqId,validCode);<span class="comment">//关键加密代码，可以跟进分析</span></div><div class="line"> </div><div class="line">            frm.elements[<span class="string">"loginName"</span>].disabled=<span class="string">"true"</span>;</div><div class="line">            frm.elements[<span class="string">"pwd"</span>].value=pwd;</div><div class="line">            frm.elements[<span class="string">"pwd"</span>].disabled=<span class="string">"true"</span>;</div><div class="line">            frm.elements[<span class="string">"req"</span>].value=str;</div><div class="line">            frm.elements[<span class="string">"reqId"</span>].value=reqId;</div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
-<p>找到这段代码，其中主要是对输入检查的部分，重点看这两处</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pwd = encode(loginName, pwd);</div></pre></td></tr></table></figure>
-<p>此处对密码进行第一次加密</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">loginName=<span class="built_in">encodeURI</span>(loginName);<span class="comment">//避免中文问题</span></div><div class="line"><span class="keyword">var</span> reqId=(<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime()+<span class="string">""</span>;</div><div class="line"><span class="keyword">var</span> str=strEnc(loginName+<span class="string">"\n"</span>+pwd,reqId,validCode);</div></pre></td></tr></table></figure>
-<p>第一行：将用户名进行 URL 的格式编码</p>
-<p>第二行，取时间戳赋值给 reqId</p>
-<p>第三行传入用户名，加密后的密码和验证码进行验证，函数返回值赋给变量 str，正是提交数据的 req 的值</p>
-<p>在两个加密函数入口设置断点，开发者工具设置断点的，只要在这个代码的行号上点击鼠标就行了，设好断点后，再次输入用户名密码和验证码，重新提交，程序被断下：</p>
-<p><img src="http://image.3001.net/images/20180402/15226545079968.png!small" alt="image"></p>
-<p>F11单步进入第一个断点，这里需要点击界面下面的中括号重新格式化下代码，单步跟进后看到：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> _$_7151 = [<span class="string">"encode"</span>, <span class="string">"ABCDEFGHIJKLMNOP"</span>, <span class="string">"QRSTUVWXYZabcdef"</span>, <span class="string">"ghijklmnopqrstuv"</span>, <span class="string">"wxyz0123456789+/"</span>, <span class="string">"="</span>, <span class="string">""</span>, <span class="string">"charCodeAt"</span>, <span class="string">"charAt"</span>, <span class="string">"length"</span>, <span class="string">"join"</span>, <span class="string">"reverse"</span>, <span class="string">"split"</span>];</div><div class="line"><span class="built_in">window</span>[_$_7151[<span class="number">0</span>]] = <span class="function"><span class="keyword">function</span>(<span class="params">c, e</span>) </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params">p</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> q = _$_7151[<span class="number">1</span>] + _$_7151[<span class="number">2</span>] + _$_7151[<span class="number">3</span>] + _$_7151[<span class="number">4</span>] + _$_7151[<span class="number">5</span>];</div><div class="line">        p = <span class="built_in">encodeURI</span>(p);</div><div class="line">        <span class="keyword">var</span> r = _$_7151[<span class="number">6</span>];</div><div class="line">        <span class="keyword">var</span> g, h, j = _$_7151[<span class="number">6</span>];</div><div class="line">        <span class="keyword">var</span> k, l, m, o = _$_7151[<span class="number">6</span>];</div><div class="line">        <span class="keyword">var</span> b = <span class="number">0</span>;</div><div class="line">        <span class="keyword">do</span> &#123;</div><div class="line">            g = p[_$_7151[<span class="number">7</span>]](b++);<span class="comment">//第一个字符</span></div><div class="line">            h = p[_$_7151[<span class="number">7</span>]](b++);<span class="comment">//第二个字符</span></div><div class="line">            j = p[_$_7151[<span class="number">7</span>]](b++);<span class="comment">//第三个字符</span></div><div class="line">            k = g &gt;&gt; <span class="number">2</span>; <span class="comment">//得到 k</span></div><div class="line">            l = ((g &amp; <span class="number">3</span>) &lt;&lt; <span class="number">4</span>) | (h &gt;&gt; <span class="number">4</span>);<span class="comment">//得到 i</span></div><div class="line">            m = ((h &amp; <span class="number">15</span>) &lt;&lt; <span class="number">2</span>) | (j &gt;&gt; <span class="number">6</span>);<span class="comment">//得到 m</span></div><div class="line">            o = j &amp; <span class="number">63</span>; <span class="comment">//得到 o</span></div><div class="line">            <span class="keyword">if</span> (<span class="built_in">isNaN</span>(h)) &#123;  <span class="comment">//如果没有第二个字符</span></div><div class="line">                m = o = <span class="number">64</span> <span class="comment">//则取表中的第64个字符替换</span></div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">if</span> (<span class="built_in">isNaN</span>(j)) &#123; <span class="comment">//如果没有第三个字符</span></div><div class="line">                    o = <span class="number">64</span> <span class="comment">//则取表中的第64个字符替换</span></div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            ;r = r + q[_$_7151[<span class="number">8</span>]](k) + q[_$_7151[<span class="number">8</span>]](l) + q[_$_7151[<span class="number">8</span>]](m) + q[_$_7151[<span class="number">8</span>]](o);</div><div class="line">            g = h = j = _$_7151[<span class="number">6</span>];</div><div class="line">            k = l = m = o = _$_7151[<span class="number">6</span>]</div><div class="line">        &#125; <span class="keyword">while</span> (b &lt; p[_$_7151[<span class="number">9</span>]]);;<span class="keyword">return</span> r</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> d = c[_$_7151[<span class="number">9</span>]];</div><div class="line">    <span class="keyword">var</span> f = a(e)[_$_7151[<span class="number">12</span>]](_$_7151[<span class="number">6</span>])[_$_7151[<span class="number">11</span>]]()[_$_7151[<span class="number">10</span>]](_$_7151[<span class="number">6</span>]);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> b = <span class="number">0</span>; b &lt; (d % <span class="number">2</span> == <span class="number">0</span> ? <span class="number">1</span> : <span class="number">2</span>); b++) &#123;</div><div class="line">        f = a(f)[_$_7151[<span class="number">12</span>]](_$_7151[<span class="number">6</span>])[_$_7151[<span class="number">11</span>]]()[_$_7151[<span class="number">10</span>]](_$_7151[<span class="number">6</span>])</div><div class="line">    &#125;</div><div class="line">    ;<span class="keyword">return</span> f</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这个函数返回的 f 就是密码第一次加密后的结果了，这个代码是用什么工具变成这样的不太清楚，如果出现 _$_7151[n] 这样的字符可以查询代码最上面的列表</p>
-<p>代换，大致过程不详说，跟一遍就知道了，就是循环从密码中取三个字符 g、h、j，然后将三个字符的ascii码左移或右移，或和其他结果加加减减，得到的结果 k、l、m、o 查询表格替换字符，如果密码长度不是 3 的整数倍，则查表结果用 “=” 替换，将循环得到的查表结果依次连接，并反序，得到一个密码加密后的密码</p>
-<p>至少将密码进行两次这样的加密计算，如果用户名的长度是奇数，再进行一次加密，加密的过程只需要复制代码到 python 中，修改成  python 的格式就可以了。</p>
-<p>步过了对密码的第一次加密后，继续步进上面设下的第二个断点</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">strEnc</span>(<span class="params">data,firstKey,secondKey,thirdKey</span>)</span>&#123;</div><div class="line"> </div><div class="line">    <span class="keyword">var</span> leng = data.length;<span class="comment">//取 data 的长度</span></div><div class="line">    <span class="keyword">var</span> encData = <span class="string">""</span>;</div><div class="line">    <span class="keyword">var</span> firstKeyBt,secondKeyBt,thirdKeyBt,firstLength,secondLength,thirdLength;</div><div class="line">    <span class="keyword">if</span>(firstKey != <span class="literal">null</span> &amp;&amp; firstKey != <span class="string">""</span>)&#123;</div><div class="line">        firstKeyBt = getKeyBytes(firstKey);<span class="comment">//取 firstkey 在每个字符之间插入一个字节的 0</span></div><div class="line">        firstLength = firstKeyBt.length;<span class="comment">//取得插入 0 后的长度</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(secondKey != <span class="literal">null</span> &amp;&amp; secondKey != <span class="string">""</span>)&#123;</div><div class="line">        secondKeyBt = getKeyBytes(secondKey);<span class="comment">//取 secondkey 在每个字符之间插入一个字节的 0</span></div><div class="line">        secondLength = secondKeyBt.length;<span class="comment">//取得插入 0 后的长度</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(thirdKey != <span class="literal">null</span> &amp;&amp; thirdKey != <span class="string">""</span>)&#123; <span class="comment">//登陆过程中，并没用到 thirdkey，即 thirdKey = None</span></div><div class="line">        thirdKeyBt = getKeyBytes(thirdKey);<span class="comment">//取 thirdkey 在每个字符之间插入一个字节的 0</span></div><div class="line">        thirdLength = thirdKeyBt.length;<span class="comment">//取得插入 0 后的长度</span></div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="keyword">if</span>(leng &gt; <span class="number">0</span>)&#123; </div><div class="line">        <span class="keyword">if</span>(leng &lt; <span class="number">4</span>)&#123; 如果 data 的长度＜<span class="number">4</span>，因为跳过，代码用省略号替换</div><div class="line">            <span class="comment">//省去一些代码……</span></div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">var</span> iterator = <span class="built_in">parseInt</span>(leng/<span class="number">4</span>);<span class="comment">//data 的长度除 64，得到循环次数</span></div><div class="line">            <span class="keyword">var</span> remainder = leng%<span class="number">4</span>; <span class="comment">//data 的长度是否是 64 位的整数倍，保存余数</span></div><div class="line">            <span class="keyword">var</span> i=<span class="number">0</span>;</div><div class="line">            <span class="keyword">for</span>(i = <span class="number">0</span>;i &lt; iterator;i++)&#123; <span class="comment">//开始循环</span></div><div class="line">                <span class="keyword">var</span> tempData = data.substring(i*<span class="number">4</span>+<span class="number">0</span>,i*<span class="number">4</span>+<span class="number">4</span>); <span class="comment">//循环取 data 的64 位</span></div><div class="line">                <span class="keyword">var</span> tempByte = strToBt(tempData);<span class="comment">//转换成 bits</span></div><div class="line">                <span class="keyword">var</span> encByte ;</div><div class="line">                <span class="keyword">if</span>(firstKey != <span class="literal">null</span> &amp;&amp; firstKey !=<span class="string">""</span> &amp;&amp; secondKey != <span class="literal">null</span> &amp;&amp; secondKey != <span class="string">""</span> )&#123;</div><div class="line">                    <span class="keyword">var</span> tempBt;</div><div class="line">                    <span class="keyword">var</span> x,y;</div><div class="line">                    tempBt = tempByte;</div><div class="line">                    <span class="keyword">for</span>(x = <span class="number">0</span>;x &lt; firstLength ;x ++)&#123;</div><div class="line">                        tempBt = enc(tempBt,firstKeyBt[x]);<span class="comment">//循环从firstkey 中取得64 位做密钥，依次对 data 中的某一段加密</span></div><div class="line">                    &#125;</div><div class="line">                    <span class="keyword">for</span>(y = <span class="number">0</span>;y &lt; secondLength ;y ++)&#123;</div><div class="line">                        tempBt = enc(tempBt,secondKeyBt[y]);<span class="comment">//循环从second中取得64 位做密钥，依次对 data 中的某一段加密</span></div><div class="line">                    &#125;</div><div class="line">                    encByte = tempBt;<span class="comment">//保存加密结果</span></div><div class="line">                &#125;</div><div class="line">            <span class="comment">//…………</span></div><div class="line">            <span class="keyword">if</span>(remainder &gt; <span class="number">0</span>)&#123;  <span class="comment">//如果 data 有多余的长度，不足64 位</span></div><div class="line">                <span class="keyword">var</span> remainderData = data.substring(iterator*<span class="number">4</span>+<span class="number">0</span>,leng);</div><div class="line">                <span class="keyword">var</span> tempByte = strToBt(remainderData);<span class="comment">//将余下的分到4个16位的数组中</span></div><div class="line">                <span class="keyword">var</span> encByte ;</div><div class="line">                <span class="keyword">if</span>(firstKey != <span class="literal">null</span> &amp;&amp; firstKey !=<span class="string">""</span> &amp;&amp; secondKey != <span class="literal">null</span> &amp;&amp; secondKey != <span class="string">""</span> &amp;&amp; thirdKey != <span class="literal">null</span> )&#123;</div><div class="line">                    <span class="keyword">var</span> tempBt;</div><div class="line">                    <span class="keyword">var</span> x,y,z;</div><div class="line">                    tempBt = tempByte;</div><div class="line">                    <span class="keyword">for</span>(x = <span class="number">0</span>;x &lt; firstLength ;x ++)&#123;</div><div class="line">                        tempBt = enc(tempBt,firstKeyBt[x]);循环从firstkey 中取得<span class="number">64</span> 位做密钥，依次对 data 中的某一段加密</div><div class="line">                    &#125;</div><div class="line">                    <span class="keyword">for</span>(y = <span class="number">0</span>;y &lt; secondLength ;y ++)&#123;</div><div class="line">                        tempBt = enc(tempBt,secondKeyBt[y]);循环从secondkey中取得<span class="number">64</span> 位做密钥，依次对 data 中的某一段加密</div><div class="line">                    &#125;</div><div class="line">                    encByte = tempBt;<span class="comment">//保存加密结果</span></div><div class="line">                &#125;</div><div class="line">                encData += bt64ToHex(encByte);<span class="comment">//将加密后的文本转为16进制文本</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> encData;<span class="comment">//返回加密结果</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这是一段循环进行 DES 加密的代码，先将data, firstkey, secondkey进行字符间插入一个字节的0, 然后不是 64 位整数倍长度的从上面代码看，相当于在后面补上 0 了<br>从data中取出一段64位数据，循环用 firstkey 和 second 中的 64 位做密钥，层层加密，得到的结果和 data 中其他 64 位加密的结果串联后就是 req 的值了<br>因为 key 都是 64 位的，再加上本身 sources 中也看到了 DES.js 文件，所以 enc(tempBt,secondkeyBt)应该就是 DES 算法了。<br>但是自己写代码模拟登陆确发现结果和自己跟的结果不同，从代码中看，DES 采用了 ECB 模式，不是 CBC 模式，PAD_mode 也没问题，都64位，不需要 DES 自己填充啊。没办法，只得硬着头皮继续跟进 DES 加密的代码</p>
-<p>我们知道，DES 加密需要先对 key 进行 置换，得到 56 位密钥，标准的 DES 都有个置换表，正常的 DES 置换表是这样的</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Permutation <span class="keyword">and</span> translation tables <span class="keyword">for</span> DES</div><div class="line">        __pc1 = [<span class="number">56</span>, <span class="number">48</span>, <span class="number">40</span>, <span class="number">32</span>, <span class="number">24</span>, <span class="number">16</span>, <span class="number">8</span>,</div><div class="line">               <span class="number">0</span>, <span class="number">57</span>, <span class="number">49</span>, <span class="number">41</span>, <span class="number">33</span>, <span class="number">25</span>, <span class="number">17</span>,</div><div class="line">               <span class="number">9</span>, <span class="number">1</span>, <span class="number">58</span>, <span class="number">50</span>, <span class="number">42</span>, <span class="number">34</span>, <span class="number">26</span>,</div><div class="line">               <span class="number">18</span>, <span class="number">10</span>, <span class="number">2</span>, <span class="number">59</span>, <span class="number">51</span>, <span class="number">43</span>, <span class="number">35</span>,</div><div class="line">               <span class="number">62</span>, <span class="number">54</span>, <span class="number">46</span>, <span class="number">38</span>, <span class="number">30</span>, <span class="number">22</span>, <span class="number">14</span>,</div><div class="line">               <span class="number">6</span>, <span class="number">61</span>, <span class="number">53</span>, <span class="number">45</span>, <span class="number">37</span>, <span class="number">29</span>, <span class="number">21</span>,</div><div class="line">               <span class="number">13</span>, <span class="number">5</span>, <span class="number">60</span>, <span class="number">52</span>, <span class="number">44</span>, <span class="number">36</span>, <span class="number">28</span>,</div><div class="line">               <span class="number">20</span>, <span class="number">12</span>, <span class="number">4</span>, <span class="number">27</span>, <span class="number">19</span>, <span class="number">11</span>, <span class="number">3</span></div><div class="line">               ]</div></pre></td></tr></table></figure>
-<p>即将 key 的第 56 位放到第 0 位，第 48 位放到第 1 位…………最后置换出 56 位的 key，再分成 2 个28 密钥，循环左移和右移，然后 对 IP 置换后的 data 加密，进行 Sbox 盒替换 和 Pbox 替换，再进行一次 IP-1 置换得到密文，解密算法一样。</p>
-<p>但跟进 DES 加密函数没多久就发现问题了，找到密钥置换的函数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> keys = generateKeys(keyByte);</div></pre></td></tr></table></figure>
-<p>并跟进：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">generateKeys</span>(<span class="params">keyByte</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> key   = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">56</span>);</div><div class="line">    <span class="keyword">var</span> keys = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line"> </div><div class="line">    keys[ <span class="number">0</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">    keys[ <span class="number">1</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">    keys[ <span class="number">2</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">    keys[ <span class="number">3</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">    keys[ <span class="number">4</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">    keys[ <span class="number">5</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">    keys[ <span class="number">6</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">    keys[ <span class="number">7</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">    keys[ <span class="number">8</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">    keys[ <span class="number">9</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">    keys[<span class="number">10</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">    keys[<span class="number">11</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">    keys[<span class="number">12</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">    keys[<span class="number">13</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">    keys[<span class="number">14</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">    keys[<span class="number">15</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">    <span class="keyword">var</span> loop = [<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>];<span class="comment">//看到了循环移位的表，没看到置换表</span></div><div class="line"> </div><div class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">7</span>;i++)&#123;</div><div class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>,k=<span class="number">7</span>;j&lt;<span class="number">8</span>;j++,k--)&#123;</div><div class="line">            key[i*<span class="number">8</span>+j]=keyByte[<span class="number">8</span>*k+i];<span class="comment">//用了这个循环生成 56 位 </span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"><span class="comment">//省略代码</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这里修改了标准的置换表，用了一个嵌套循环生成 56 位密钥，即把</p>
-<p>原来 key 的 56 位 –&gt; 第 0 位，48 位 –&gt; 第 1 位，40 位 –&gt; 第 2 位，…………0 位–&gt; 第 7 位</p>
-<p>原来 key 的 57 位 –&gt; 第 8 位，49 位 –&gt; 第 9 位，41 位 –&gt; 第 10 位，………… 1 位 –&gt;第 15 位</p>
-<p>…………</p>
-<p>最后丢弃原 key 的第 63，55，47，39，31，23，15，7 位（位置号从 0 开始）</p>
-<p>在 python 中不能直接使用标准的 DES库了，可以把标准库中的 pyDes.py 文件拷贝到工程同目录下，改名为 Des,py，并导入工程</p>
-<p>from Des import *</p>
-<p>另外在 Des.py 中找到 key 的置换表，修改成</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">__pc1 = [</div><div class="line">        <span class="number">56</span>, <span class="number">48</span>, <span class="number">40</span>, <span class="number">32</span>, <span class="number">24</span>, <span class="number">16</span>, <span class="number">8</span>, <span class="number">0</span>,</div><div class="line">        <span class="number">57</span>, <span class="number">49</span>, <span class="number">41</span>, <span class="number">33</span>, <span class="number">25</span>, <span class="number">17</span>, <span class="number">9</span>, <span class="number">1</span>,</div><div class="line">        <span class="number">58</span>, <span class="number">50</span>, <span class="number">42</span>, <span class="number">34</span>, <span class="number">26</span>, <span class="number">18</span>, <span class="number">10</span>, <span class="number">2</span>,</div><div class="line">        <span class="number">59</span>, <span class="number">51</span>, <span class="number">43</span>, <span class="number">35</span>, <span class="number">27</span>, <span class="number">19</span>, <span class="number">11</span>, <span class="number">3</span>,</div><div class="line">        <span class="number">60</span>, <span class="number">52</span>, <span class="number">44</span>, <span class="number">36</span>, <span class="number">28</span>, <span class="number">20</span>, <span class="number">12</span>, <span class="number">4</span>,</div><div class="line">        <span class="number">61</span>, <span class="number">53</span>, <span class="number">45</span>, <span class="number">37</span>, <span class="number">29</span>, <span class="number">21</span>, <span class="number">13</span>, <span class="number">5</span>,</div><div class="line">        <span class="number">62</span>, <span class="number">54</span>, <span class="number">46</span>, <span class="number">38</span>, <span class="number">30</span>, <span class="number">22</span>, <span class="number">14</span>, <span class="number">6</span></div><div class="line">    ]</div></pre></td></tr></table></figure>
-<p>就可以正常使用 Des 了</p>
-<p>最后附上 python 代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">from</span> Des <span class="keyword">import</span> *</div><div class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> quote</div><div class="line"><span class="keyword">from</span> time <span class="keyword">import</span> time, sleep</div><div class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">import</span> sys</div><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line"> </div><div class="line">s = requests.session()</div><div class="line">headers = &#123;</div><div class="line">    <span class="string">'Cache-Control'</span>: <span class="string">'max-age=0'</span>,</div><div class="line">    <span class="string">'Connection'</span>: <span class="string">'keep-alive'</span>,</div><div class="line">    <span class="string">'Referer'</span>: <span class="string">'http://www.jste.net.cn/uids/login.jsp'</span>,</div><div class="line">    <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) \</span></div><div class="line"><span class="string">    Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0'</span></div><div class="line">&#125;</div><div class="line"> </div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">custom_encode</span><span class="params">(data)</span>:</span>  <span class="comment"># 懒得注释了，直接从js中拷贝出来，改成python的代码</span></div><div class="line">    tab = <span class="string">'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='</span></div><div class="line">    data_bytes = list(data.encode())</div><div class="line">    <span class="keyword">while</span> len(data_bytes) % <span class="number">3</span> != <span class="number">0</span>:</div><div class="line">        data_bytes.append(<span class="number">0</span>)</div><div class="line">    b = <span class="number">0</span></div><div class="line">    length = len(data_bytes)</div><div class="line">    r = <span class="string">''</span></div><div class="line">    <span class="keyword">while</span> b &lt; length:</div><div class="line">        g = data_bytes[b]</div><div class="line">        h = data_bytes[b + <span class="number">1</span>]</div><div class="line">        j = data_bytes[b + <span class="number">2</span>]</div><div class="line">        k = g &gt;&gt; <span class="number">2</span></div><div class="line">        m = ((g &amp; <span class="number">3</span>) &lt;&lt; <span class="number">4</span>) | (h &gt;&gt; <span class="number">4</span>)</div><div class="line">        n = ((h &amp; <span class="number">15</span>) &lt;&lt; <span class="number">2</span>) | (j &gt;&gt; <span class="number">6</span>)</div><div class="line">        o = j &amp; <span class="number">63</span></div><div class="line">        third_char = <span class="string">'='</span> <span class="keyword">if</span> h == <span class="number">0</span> <span class="keyword">else</span> tab[n]</div><div class="line">        fourth_char = <span class="string">'='</span> <span class="keyword">if</span> j == <span class="number">0</span> <span class="keyword">else</span> tab[o]</div><div class="line">        r = r + tab[k] + tab[m] + third_char + fourth_char</div><div class="line">        b = b + <span class="number">3</span></div><div class="line">    <span class="keyword">return</span> r[::<span class="number">-1</span>]  <span class="comment"># 反序输出</span></div><div class="line"> </div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">encode_pwd</span><span class="params">(str_name, str_pwd)</span>:</span></div><div class="line">    encoded_pwd = custom_encode(str_pwd)</div><div class="line">    encoded_pwd = custom_encode(encoded_pwd)  <span class="comment"># 先连续对密码加密两次</span></div><div class="line">    <span class="keyword">if</span> len(str_name) % <span class="number">2</span> == <span class="number">1</span>:</div><div class="line">        encoded_pwd = custom_encode(encoded_pwd)  <span class="comment"># 如果用户名长度是奇数，则再加密一次</span></div><div class="line">    <span class="keyword">return</span> encoded_pwd</div><div class="line"> </div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">strenc</span><span class="params">(data, firstkey, secondkey)</span>:</span></div><div class="line">    bts_data = extend_to_16bits(data)  <span class="comment"># 将data长度扩展成64位的倍数</span></div><div class="line">    bts_firstkey = extend_to_16bits(firstkey)  <span class="comment"># 将 first_key 长度扩展成64位的倍数</span></div><div class="line">    bts_secondkey = extend_to_16bits(secondkey)  <span class="comment"># 将 second_key 长度扩展成64位的倍数</span></div><div class="line">    i = <span class="number">0</span></div><div class="line">    bts_result = []</div><div class="line">    <span class="keyword">while</span> i &lt; len(bts_data):</div><div class="line">        bts_temp = bts_data[i:i + <span class="number">8</span>]  <span class="comment"># 将data分成每64位一段，分段加密</span></div><div class="line">        j, k = <span class="number">0</span>, <span class="number">0</span></div><div class="line">        <span class="keyword">while</span> j &lt; len(bts_firstkey):</div><div class="line">            des_k = des(bts_firstkey[j: j + <span class="number">8</span>], ECB)  <span class="comment"># 分别取出 first_key 的64位作为密钥</span></div><div class="line">            bts_temp = list(des_k.encrypt(bts_temp))</div><div class="line">            j += <span class="number">8</span></div><div class="line">        <span class="keyword">while</span> k &lt; len(bts_secondkey):</div><div class="line">            des_k = des(bts_secondkey[k:k + <span class="number">8</span>], ECB)  <span class="comment"># 分别取出 second_key 的64位作为密钥</span></div><div class="line">            bts_temp = list(des_k.encrypt(bts_temp))</div><div class="line">            k += <span class="number">8</span></div><div class="line">        bts_result.extend(bts_temp)</div><div class="line">        i += <span class="number">8</span></div><div class="line">    str_result = <span class="string">''</span></div><div class="line">    <span class="keyword">for</span> each <span class="keyword">in</span> bts_result:</div><div class="line">        str_result += <span class="string">'%02X'</span> % each  <span class="comment"># 分别加密data的各段，串联成字符串</span></div><div class="line">    <span class="keyword">return</span> str_result</div><div class="line"> </div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">extend_to_16bits</span><span class="params">(data)</span>:</span>  <span class="comment"># 将字符串的每个字符前插入 0，变成16位，并在后面补0，使其长度是64位整数倍</span></div><div class="line">    bts = data.encode()</div><div class="line">    filled_bts = []</div><div class="line">    <span class="keyword">for</span> each <span class="keyword">in</span> bts:</div><div class="line">        filled_bts.extend([<span class="number">0</span>, each])  <span class="comment"># 每个字符前插入 0</span></div><div class="line">    <span class="keyword">while</span> len(filled_bts) % <span class="number">8</span> != <span class="number">0</span>:  <span class="comment"># 长度扩展到8的倍数</span></div><div class="line">        filled_bts.append(<span class="number">0</span>)  <span class="comment"># 不是8的倍数，后面添加0，便于DES加密时分组</span></div><div class="line">    <span class="keyword">return</span> filled_bts</div><div class="line"> </div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_rand_code</span><span class="params">()</span>:</span></div><div class="line">    random_code_url = <span class="string">r'http://www.jste.net.cn/uids/genImageCode?rnd='</span></div><div class="line">    time_stamp = str(int(time() * <span class="number">1000</span>))</div><div class="line">    random_code_url += time_stamp</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        req = s.get(random_code_url, headers=headers, stream=<span class="keyword">True</span>)</div><div class="line">        <span class="keyword">with</span> open(<span class="string">'rand_code.jpg'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</div><div class="line">            <span class="keyword">for</span> chunk <span class="keyword">in</span> req.iter_content(chunk_size=<span class="number">1024</span>):</div><div class="line">                f.write(chunk)</div><div class="line">    <span class="keyword">except</span> requests.RequestException:</div><div class="line">        print(<span class="string">'网络链接错误，请稍后重试/(ㄒoㄒ)/~~'</span>)</div><div class="line">        sys.exit()</div><div class="line">    <span class="keyword">with</span> Image.open(<span class="string">'rand_code.jpg'</span>)<span class="keyword">as</span> img:</div><div class="line">        img.show()</div><div class="line"> </div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">login_site</span><span class="params">(reqid, randomcode, reqkey)</span>:</span></div><div class="line">    post_data = &#123;</div><div class="line">        <span class="string">'randomCode'</span>: randomcode,</div><div class="line">        <span class="string">'returnURL'</span>: <span class="keyword">None</span>,</div><div class="line">        <span class="string">'appId'</span>: <span class="string">'uids'</span>,</div><div class="line">        <span class="string">'site'</span>: <span class="keyword">None</span>,</div><div class="line">        <span class="string">'encrypt'</span>: <span class="number">1</span>,</div><div class="line">        <span class="string">'reqId'</span>: reqid,</div><div class="line">        <span class="string">'req'</span>: reqkey</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        req = s.post(<span class="string">'http://www.jste.net.cn/uids/login.jsp'</span>, headers=headers, data=post_data)</div><div class="line">        print(<span class="string">'Status Code：%s'</span> % req.status_code)  <span class="comment"># 不知道为什么浏览器上登陆成功返回的是302，这里返回200</span></div><div class="line">        <span class="keyword">if</span> <span class="string">'Set-Cookie'</span> <span class="keyword">in</span> req.headers.keys():  <span class="comment"># 还好，看到response中出现Set-Cookie，就登陆成功了</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">    <span class="keyword">except</span> requests.RequestException:</div><div class="line">        print(<span class="string">'网络链接错误，请稍后重试/(ㄒoㄒ)/~~'</span>)</div><div class="line">        <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line"> </div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">''</span>.center(<span class="number">100</span>, <span class="string">'-'</span>))</div><div class="line">    uname = input(<span class="string">'请输入你的用户名：'</span>)</div><div class="line">    pwd = input(<span class="string">'请输入你的登陆密码：'</span>)</div><div class="line">    get_rand_code()</div><div class="line">    secondkey = input(<span class="string">'请输入看到的验证码：'</span>)  <span class="comment"># 取得验证码，作为second_key，提交数据时作为 randomCode 的值</span></div><div class="line">    firstkey = str(int(time() * <span class="number">1000</span>))  <span class="comment"># 取得提交时的时间戳，作为first_key，提交数据时候作为 reqId 的值</span></div><div class="line">    crypt_pwd = encode_pwd(uname, pwd)  <span class="comment"># 对输入的密码进行第一次加密</span></div><div class="line">    data = quote(uname) + <span class="string">'\n'</span> + crypt_pwd  <span class="comment"># 用户名URI编码后和密码加密后的文本链接等待被DES加密</span></div><div class="line">    post_req = strenc(data, firstkey, secondkey)  <span class="comment"># 主要是DES计算，作为 req 的值提交数据</span></div><div class="line">    <span class="keyword">if</span> login_site(reqid=firstkey, randomcode=secondkey, reqkey=post_req) <span class="keyword">is</span> <span class="keyword">True</span>:</div><div class="line">        print(<span class="string">''</span>.center(<span class="number">100</span>, <span class="string">'-'</span>))</div><div class="line">        print(<span class="string">'登陆成功，O(∩_∩)O哈哈~...'</span>)</div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            req = s.get(<span class="string">'http://www.jste.net.cn/train/credit_hour/top.jsp'</span>)  <span class="comment"># 打开一个网页测试一下</span></div><div class="line">            soup = BeautifulSoup(req.text, <span class="string">'html5lib'</span>)  <span class="comment"># 网页为多框架，测试下访问TOP框架中的文本</span></div><div class="line">            print(soup.select(<span class="string">'.b'</span>)[<span class="number">0</span>].text.replace(<span class="string">'\n'</span>, <span class="string">''</span>).replace(<span class="string">' '</span>, <span class="string">''</span>))</div><div class="line">        <span class="keyword">except</span> requests.RequestException:</div><div class="line">            print(<span class="string">'网络链接错误，请稍后重试/(ㄒoㄒ)/~~'</span>)</div><div class="line"> </div><div class="line"> </div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:  <span class="comment"># 启动程序</span></div><div class="line">    main()</div></pre></td></tr></table></figure></p>
-<p>效果<br><img src="http://image.3001.net/images/20180402/15226546215346.png!small" alt="image"></p>
-<p>最后思考了下，很多网站的数据都是明码提交的，或者是简单的加密提交的，这个网站在加密上花了一些工夫</p>
-<p>但是js脚本最大的问题就是别人可以看到源码，虽然网站登陆成功后立即删除了js文件，但是只要出现了就会被发现，我网上搜索了下隐藏源码的办法，但是水平才菜了，没学过 java ，也没看懂。</p>
-<p>最后补充下：DES加密的数据 data 是用户名的” URL格式 + 换行 + 密码第一次加密得到的文本“</p>
-<p>firstkey 是提交时得到的时间戳，secondkey 就是输入的验证码</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://damiantuan.xyz/2018/02/20/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="PG-55">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="哟，一个大面团">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/20/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-20T21:28:46+08:00">
-                2018-02-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h2 id="just-test"><a href="#just-test" class="headerlink" title="just test"></a>just test</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1511496576&amp;di=e623116599413655c9f56a092b579092&amp;imgtype=jpg&amp;er=1&amp;src=http%3A%2F%2Fdl.bizhi.sogou.com%2Fimages%2F2012%2F05%2F3%2F6990.jpg" alt=""></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://damiantuan.xyz/2017/12/09/浅谈HTTP中Get与Post/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="PG-55">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="哟，一个大面团">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/09/浅谈HTTP中Get与Post/" itemprop="url">浅谈HTTP中Get与Post</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-09T14:25:55+08:00">
-                2017-12-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/爬虫/" itemprop="url" rel="index">
-                    <span itemprop="name">爬虫</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>前面的一部分是自己参考网上的一些比较浅显易懂的文章写的，也引用了一些段子；第二部分就是正儿八经的搞知识了。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/09/浅谈HTTP中Get与Post/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+          <div class="collection-title">
+            <h2 class="archive-year" id="archive-year-2020">2020</h2>
           </div>
-          <!--/noindex-->
         
-      
-    </div>
-    
-    
-    
+        
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://damiantuan.xyz/2017/12/03/网页状态码及其处理/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="PG-55">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="哟，一个大面团">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h3 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/03/网页状态码及其处理/" itemprop="url">网页状态码及其处理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+            <a class="post-title-link" href="/2020/03/30/爬取薄荷网所有食物的营养数据，并分类放入excel中/" itemprop="url">
               
-                <span class="post-meta-item-text">发表于</span>
+                <span itemprop="name">爬取薄荷网所有食物的营养数据，并分类放入excel中</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-03T17:55:21+08:00">
-                2017-12-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python-爬虫/" itemprop="url" rel="index">
-                    <span itemprop="name">python,爬虫</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>记录一下在学习爬虫过程中遇到的几种网页的状态码以及处理方法</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/03/网页状态码及其处理/#more" rel="contents">
-              阅读全文 &raquo;
             </a>
-          </div>
-          <!--/noindex-->
         
-      
-    </div>
-    
-    
-    
+      </h3>
 
-    
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2020-03-30T18:30:39+08:00"
+              content="2020-03-30" >
+          03-30
+        </time>
+      </div>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
-    
+
       
 
-  
+        
+        
+        
 
-  
-  
-  
+        
+          
+          <div class="collection-title">
+            <h2 class="archive-year" id="archive-year-2018">2018</h2>
+          </div>
+        
+        
+
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://damiantuan.xyz/2017/11/21/计算上证日K与个股的相关性系数/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="PG-55">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="哟，一个大面团">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h3 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/21/计算上证日K与个股的相关性系数/" itemprop="url">计算上证日K与个股的相关性系数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+            <a class="post-title-link" href="/2018/06/09/爬取深圳证券交易所专题统计/" itemprop="url">
               
-                <span class="post-meta-item-text">发表于</span>
+                <span itemprop="name">爬取深圳证券交易所专题统计</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-21T15:06:05+08:00">
-                2017-11-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/量化分析/" itemprop="url" rel="index">
-                    <span itemprop="name">量化分析</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>这算是一个面试的题吧。需求是把与上证日K趋势的相关性系数大于80%的个股挑选出来。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/21/计算上证日K与个股的相关性系数/#more" rel="contents">
-              阅读全文 &raquo;
             </a>
-          </div>
-          <!--/noindex-->
         
-      
-    </div>
-    
-    
-    
+      </h3>
 
-    
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-06-09T05:30:39+08:00"
+              content="2018-06-09" >
+          06-09
+        </time>
+      </div>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
-    
+
       
 
-  
+        
+        
+        
 
-  
-  
-  
+        
+        
+
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://damiantuan.xyz/2017/11/19/scrapy爬取当当网所有3c产品商品名称，价格，评论数/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="PG-55">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="哟，一个大面团">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h3 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/19/scrapy爬取当当网所有3c产品商品名称，价格，评论数/" itemprop="url">scrapy爬取当当网所有3c产品商品名称，价格，评论数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+            <a class="post-title-link" href="/2018/04/05/用python检测窗体状态/" itemprop="url">
               
-                <span class="post-meta-item-text">发表于</span>
+                <span itemprop="name">用python检测窗体状态</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-19T16:31:19+08:00">
-                2017-11-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python爬虫/" itemprop="url" rel="index">
-                    <span itemprop="name">python爬虫</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>Scrapy是一个为了爬取网站数据，提取结构性数据而编写的应用框架。 可以应用在包括数据挖掘，信息处理或存储历史数据等一系列的程序中。<br>Scrapy 使用 Twisted这个异步网络库来处理网络通讯，架构清晰，并且包含了各种中间件接口，可以灵活的完成各种需求。</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/19/scrapy爬取当当网所有3c产品商品名称，价格，评论数/#more" rel="contents">
-              阅读全文 &raquo;
             </a>
-          </div>
-          <!--/noindex-->
         
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-04-05T11:01:46+08:00"
+              content="2018-04-05" >
+          04-05
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
       
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2018/04/05/用python检测进程状态/" itemprop="url">
+              
+                <span itemprop="name">用python检测进程状态</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-04-05T09:11:52+08:00"
+              content="2018-04-05" >
+          04-05
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2018/04/03/Python模拟登陆某网教师教育网/" itemprop="url">
+              
+                <span itemprop="name">python模拟登录某网教师教育网</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-04-03T16:11:52+08:00"
+              content="2018-04-03" >
+          04-03
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2018/02/20/hello-world/" itemprop="url">
+              
+                <span itemprop="name">Hello World</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-02-20T21:28:46+08:00"
+              content="2018-02-20" >
+          02-20
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+          
+          <div class="collection-title">
+            <h2 class="archive-year" id="archive-year-2017">2017</h2>
+          </div>
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2017/12/09/浅谈HTTP中Get与Post/" itemprop="url">
+              
+                <span itemprop="name">浅谈HTTP中Get与Post</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-12-09T14:25:55+08:00"
+              content="2017-12-09" >
+          12-09
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2017/12/03/网页状态码及其处理/" itemprop="url">
+              
+                <span itemprop="name">网页状态码及其处理</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-12-03T17:55:21+08:00"
+              content="2017-12-03" >
+          12-03
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2017/11/21/计算上证日K与个股的相关性系数/" itemprop="url">
+              
+                <span itemprop="name">计算上证日K与个股的相关性系数</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-11-21T15:06:05+08:00"
+              content="2017-11-21" >
+          11-21
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2017/11/19/scrapy爬取当当网所有3c产品商品名称，价格，评论数/" itemprop="url">
+              
+                <span itemprop="name">scrapy爬取当当网所有3c产品商品名称，价格，评论数</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-11-19T16:31:19+08:00"
+              content="2017-11-19" >
+          11-19
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
   
   
   
-  </article>
-
-
-    
-  </section>
 
   
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
+
 
 
 
@@ -1823,8 +728,12 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/imag.png"
+                alt="PG-55" />
+            
               <p class="site-author-name" itemprop="name">PG-55</p>
-              <p class="site-description motion-element" itemprop="description">太阳那么红，为什么还那么冷</p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -1873,14 +782,48 @@
             </div>
           
 
-          
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="jui368@163.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/2150856453/profile?topnav=1&wvr=6" target="_blank" title="weibo">
+                    
+                      <i class="fa fa-fw fa-weibo"></i>weibo</a>
+                </span>
+              
+            
+          </div>
 
           
           
 
           
           
-
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://damiantuan.xyz" title="大面团" target="_blank">大面团</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.0101tx.com/" title="亿界博客" target="_blank">亿界博客</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=31445772&auto=1&height=66"></iframe>
           
 
         </div>
@@ -1900,17 +843,33 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">PG-55</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">22.8k</span>
+  
 </div>
+<span id="busuanzi_container_site_uv">
+  本站总访问量<span id="busuanzi_value_site_uv"></span>次
+</span>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="http://damiantuan.xyz">Paang Lam</a> 个人专属</div>
 
 
 
@@ -1918,15 +877,26 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">博客主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
 
-
+<div class="theme-info">
+  <div class="powered-by">
+  
 
 
         
 
 
 
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=63850979";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -1965,6 +935,8 @@
   
 
 
+  
+
 
 
 
@@ -1976,54 +948,52 @@
 
 
   
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
   
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
 
 
 
   
   
 
-  
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
 
   
 
+  
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
 
 
 
@@ -2069,17 +1039,33 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
 
   
 
   
-  
 
   
 
-  
-
-  
+  <!-- 背景动画 -->
+  <script type="text/javascript" src="/js/src/particle.js"></script>
 
 </body>
 </html>
